@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.env.*
+*.tmp
+*.m4a
+*.mp3
+*.wav
+*.aac
+*.flac
+*.ogg
+*.aiff
+*.wma
