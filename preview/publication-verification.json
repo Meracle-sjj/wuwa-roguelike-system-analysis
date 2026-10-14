@@ -1,0 +1,646 @@
+{
+  "checkedAt": "2026-10-14T04:41:14.458839+00:00",
+  "siteUrl": "https://meracle-sjj.github.io/wuwa-roguelike-system-analysis/",
+  "deploymentCommit": "6b0f5581df6e81e356cebd8739712a47c23401b9",
+  "actionsUrl": "https://github.com/Meracle-sjj/wuwa-roguelike-system-analysis/actions/runs/38512324717",
+  "httpsEnforced": true,
+  "fileCount": 79,
+  "passed": true,
+  "transport": "本机HTTP请求显式关闭环境代理；未判断系统VPN或客户端网络出口地区",
+  "browserVerification": "上一版已在真实浏览器验证桌面/移动版式和动画；本次线上浏览器工具连接超时，未重新做线上视觉验证",
+  "mainlandVerification": "大陆第三方节点未取得结果；等待用户真实网络反馈",
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "status": 200,
+      "bytes": 3352,
+      "seconds": 0.562,
+      "matchesLocal": true,
+      "sha256": "c8a9c998924fbb997903cdc9bee2cd8fb06a96527dd6f7c9e4981e4b23b72316"
+    },
+    {
+      "path": "README.md",
+      "status": 200,
+      "bytes": 5419,
+      "seconds": 0.532,
+      "matchesLocal": true,
+      "sha256": "e51bf5df63c48dab7bbfd1fa2fb63402b07423ecd3d4f05d17d50467094a833d"
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "bytes": 7268,
+      "seconds": 0.58,
+      "matchesLocal": true,
+      "sha256": "2763f990432fe62ebc1c592280bdd90672f7ebfadf8f72867d7595da581e88e1"
+    },
+    {
+      "path": "assets/01-mode-overview.png",
+      "status": 200,
+      "bytes": 1926095,
+      "seconds": 1.016,
+      "matchesLocal": true,
+      "sha256": "8e261e945557284e5fc94206fa596b4f7b405d79d353ff639206eb9b3990bf45"
+    },
+    {
+      "path": "assets/02-weekly-position.png",
+      "status": 200,
+      "bytes": 2243507,
+      "seconds": 2.38,
+      "matchesLocal": true,
+      "sha256": "53a0b1d97a44da88629f31bed4d1d024d0a80a06f838d7c346bfaeae6b73116b"
+    },
+    {
+      "path": "assets/03-sigil-design-sources.png",
+      "status": 200,
+      "bytes": 1743559,
+      "seconds": 2.446,
+      "matchesLocal": true,
+      "sha256": "6d026a5282a1a8dab83767acb35bf0dd9a236f946652c2d8a091440f61b6e4ab"
+    },
+    {
+      "path": "assets/04-baseline-rhythm.png",
+      "status": 200,
+      "bytes": 1579201,
+      "seconds": 1.107,
+      "matchesLocal": true,
+      "sha256": "89029f90c04bd27bff69d626ead1254308109fcccff52482a08b88a1bf1b2a51"
+    },
+    {
+      "path": "assets/05-rarity-selection.png",
+      "status": 200,
+      "bytes": 1686564,
+      "seconds": 1.719,
+      "matchesLocal": true,
+      "sha256": "7e76c7a91b117678230d05b1503af2d636255c3517ade5f795869c303fc744d0"
+    },
+    {
+      "path": "assets/06-metaphor-rhythm.png",
+      "status": 200,
+      "bytes": 1391900,
+      "seconds": 1.278,
+      "matchesLocal": true,
+      "sha256": "67b90e2a1fdc30d190f7b5d8616b9c08ea1314c682312f37da12adf954a83837"
+    },
+    {
+      "path": "assets/07-process-feedback.png",
+      "status": 200,
+      "bytes": 2056676,
+      "seconds": 5.457,
+      "matchesLocal": true,
+      "sha256": "bd0bef20fb711c5e9d32224289a698fb20a862253f397fd97398015e49fa12a4"
+    },
+    {
+      "path": "assets/08-window-perception.png",
+      "status": 200,
+      "bytes": 1409943,
+      "seconds": 1.44,
+      "matchesLocal": true,
+      "sha256": "7067f2eee153534e3ed1c22d4aad739797d2633575ce7ca3756cca462f7e8954"
+    },
+    {
+      "path": "assets/CLAUDE.md",
+      "status": 200,
+      "bytes": 1257,
+      "seconds": 0.552,
+      "matchesLocal": true,
+      "sha256": "27fc32aec8131e09754c34e5bf3ab1d1317a2c68d587218fef0f3eb7e8a9dd93"
+    },
+    {
+      "path": "boxing-scene-contract.md",
+      "status": 200,
+      "bytes": 3970,
+      "seconds": 0.58,
+      "matchesLocal": true,
+      "sha256": "0b0301df10cbc9c2504f8a90cbfc91cd82ef55b402f7da6e2e2f35d39a2d871c"
+    },
+    {
+      "path": "boxing-scene.css",
+      "status": 200,
+      "bytes": 4644,
+      "seconds": 0.606,
+      "matchesLocal": true,
+      "sha256": "99dcde3ae24398ec03f3c1160017389970aeb8166589052a0e98b2985cbb288e"
+    },
+    {
+      "path": "boxing-scene.js",
+      "status": 200,
+      "bytes": 16634,
+      "seconds": 0.58,
+      "matchesLocal": true,
+      "sha256": "6f7372f6279da9e14ee8e16182adf199e3a777d1f3260372b5584d610759e564"
+    },
+    {
+      "path": "content-data.js",
+      "status": 200,
+      "bytes": 190831,
+      "seconds": 0.798,
+      "matchesLocal": true,
+      "sha256": "a3a3e5ca4c9495f8b68d8eca6d001d9f7e1856d936b1457b6bb05b85bf8ef5d4"
+    },
+    {
+      "path": "feedback-scenes-contract.md",
+      "status": 200,
+      "bytes": 3040,
+      "seconds": 0.575,
+      "matchesLocal": true,
+      "sha256": "9fe08dc5e2d10845bd7278aa97a9d973b4294648ffd75f94ec52f11e6368e760"
+    },
+    {
+      "path": "feedback-scenes.css",
+      "status": 200,
+      "bytes": 7942,
+      "seconds": 0.552,
+      "matchesLocal": true,
+      "sha256": "d64b7cf5b47f652dc86d0d6f9a5f9caea28e6689c420c93a4cba46f4767894bb"
+    },
+    {
+      "path": "feedback-scenes.js",
+      "status": 200,
+      "bytes": 21911,
+      "seconds": 0.582,
+      "matchesLocal": true,
+      "sha256": "ecc02e2cc8b0a5d5bf39f8de4debc0192d3a6ca5ae22cbec511cd8cf6a3d39bc"
+    },
+    {
+      "path": "fonts/CLAUDE.md",
+      "status": 200,
+      "bytes": 668,
+      "seconds": 0.534,
+      "matchesLocal": true,
+      "sha256": "fa804355cda0502fcc5d80bd97f47b5351d15fa01ebd75ea560fcaca39ee83a0"
+    },
+    {
+      "path": "fonts/OFL.txt",
+      "status": 200,
+      "bytes": 4400,
+      "seconds": 0.562,
+      "matchesLocal": true,
+      "sha256": "a094514ca57cf8f9c5e8d8d1adab5d8cd3a377297ff016f9df2c05b3ecd77f0a"
+    },
+    {
+      "path": "fonts/case-relic.woff2",
+      "status": 200,
+      "bytes": 9924,
+      "seconds": 0.545,
+      "matchesLocal": true,
+      "sha256": "762196da24ff6d9dc54a912b5d0ebaaba553ace0d2a73fe921d72df166485f5b"
+    },
+    {
+      "path": "fonts/font-face.css",
+      "status": 200,
+      "bytes": 528,
+      "seconds": 0.548,
+      "matchesLocal": true,
+      "sha256": "93c56e1bc3628da1cd444dce4ae3175ecd7712f1680424b71460fab3604af002"
+    },
+    {
+      "path": "fonts/provenance.json",
+      "status": 200,
+      "bytes": 1069,
+      "seconds": 0.579,
+      "matchesLocal": true,
+      "sha256": "14f8a41dbbc67c8e7490f412bc42e71e499885a0f26abb4e95b7c4490f2d6bf6"
+    },
+    {
+      "path": "hierarchy-contract.md",
+      "status": 200,
+      "bytes": 2506,
+      "seconds": 0.526,
+      "matchesLocal": true,
+      "sha256": "1a34083ca8a21d4f26a43a9d4cb1ee8ad54243a533598f221ea2395e1c809b41"
+    },
+    {
+      "path": "hierarchy.css",
+      "status": 200,
+      "bytes": 9995,
+      "seconds": 0.577,
+      "matchesLocal": true,
+      "sha256": "2fc15ee4158ffa99f9b81cdefa8359754be904356851895b2ab836faac19f59b"
+    },
+    {
+      "path": "hierarchy.js",
+      "status": 200,
+      "bytes": 10322,
+      "seconds": 0.579,
+      "matchesLocal": true,
+      "sha256": "53fbd9942f7d1a69a9273cdaebee920f5bba652d362c58495add5739b0870d2b"
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 19434,
+      "seconds": 0.568,
+      "matchesLocal": true,
+      "sha256": "c8196dd164ee599263f971992c4c30fcb86ae82008209ff7146e9d8dbe3ba2c5"
+    },
+    {
+      "path": "motion.js",
+      "status": 200,
+      "bytes": 5086,
+      "seconds": 0.522,
+      "matchesLocal": true,
+      "sha256": "d46aa5b749cd542573c560455977339e77464ff1b13ec051877d985c624b9b89"
+    },
+    {
+      "path": "reading.css",
+      "status": 200,
+      "bytes": 6306,
+      "seconds": 0.56,
+      "matchesLocal": true,
+      "sha256": "696e0067a424b0c2aceaa70363e5b33e7cc4da67977a0b3ca4bc04391d689e01"
+    },
+    {
+      "path": "responsive.css",
+      "status": 200,
+      "bytes": 9380,
+      "seconds": 0.563,
+      "matchesLocal": true,
+      "sha256": "6298d3d0c4404cb8eb53707b730982227bef288c8ab0ea00c033401614b1c439"
+    },
+    {
+      "path": "revision-notes.md",
+      "status": 200,
+      "bytes": 2654,
+      "seconds": 0.527,
+      "matchesLocal": true,
+      "sha256": "30fb3f06272edcf8a11268eaf29c6c1c57aaa727d3d2fef1a57ba7e21abd30d9"
+    },
+    {
+      "path": "rhythm-contract.md",
+      "status": 200,
+      "bytes": 3723,
+      "seconds": 0.55,
+      "matchesLocal": true,
+      "sha256": "e47fa5a40a08f18fa8ba93471c135a2d9248a0bdd4bb29914a9438dc90d51db1"
+    },
+    {
+      "path": "rhythm.css",
+      "status": 200,
+      "bytes": 9032,
+      "seconds": 0.535,
+      "matchesLocal": true,
+      "sha256": "2d4860bafc19ca2bc711d5ff674f16d2d5c34ca7fe3d9c66361b43670ea71108"
+    },
+    {
+      "path": "rhythm.js",
+      "status": 200,
+      "bytes": 16293,
+      "seconds": 1.573,
+      "matchesLocal": true,
+      "sha256": "57d5fa02937eee1a6a31ac5d0bb58113e01f715a8d43608413e72c95e036384d"
+    },
+    {
+      "path": "selection-contract.md",
+      "status": 200,
+      "bytes": 3314,
+      "seconds": 0.513,
+      "matchesLocal": true,
+      "sha256": "4c740c1b45c6cd8981f7080e87570dc311be93f6edddf0f19b36da6fcaffc724"
+    },
+    {
+      "path": "selection.css",
+      "status": 200,
+      "bytes": 6252,
+      "seconds": 0.597,
+      "matchesLocal": true,
+      "sha256": "3ffd3ea01d5d5af6cb9c6676450a7344f7f4812af18f58ec36d5a05c1fc799ab"
+    },
+    {
+      "path": "selection.js",
+      "status": 200,
+      "bytes": 12505,
+      "seconds": 0.583,
+      "matchesLocal": true,
+      "sha256": "779f6bdc72a94a8d29b55dea3267f4c7b2e5fc23b4673a390107daa0407327d8"
+    },
+    {
+      "path": "sources/CLAUDE.md",
+      "status": 200,
+      "bytes": 1105,
+      "seconds": 0.543,
+      "matchesLocal": true,
+      "sha256": "81cff2996e1af91529f06d8465c871988d8f3f280b306398b2b0f6f527f91117"
+    },
+    {
+      "path": "sources/README.md",
+      "status": 200,
+      "bytes": 2390,
+      "seconds": 0.535,
+      "matchesLocal": true,
+      "sha256": "9b129631d7036f46ec3f4d99482a8b782876776146bcf0a4138503983fae2d38"
+    },
+    {
+      "path": "sources/SNAPSHOT.md",
+      "status": 200,
+      "bytes": 1587,
+      "seconds": 0.562,
+      "matchesLocal": true,
+      "sha256": "ee627edbe74b7e51f615d4be55b1ee2de2aca24018662db1992517f52c07978d"
+    },
+    {
+      "path": "sources/SOURCE-CLAUDE.md",
+      "status": 200,
+      "bytes": 1642,
+      "seconds": 0.557,
+      "matchesLocal": true,
+      "sha256": "8f4fbb6b05ef2c9f4a81871bfa0cad7b9625ca210cd8ebf4d0543be3667feb6e"
+    },
+    {
+      "path": "sources/assets/01-mode-overview.png",
+      "status": 200,
+      "bytes": 1926095,
+      "seconds": 1.438,
+      "matchesLocal": true,
+      "sha256": "8e261e945557284e5fc94206fa596b4f7b405d79d353ff639206eb9b3990bf45"
+    },
+    {
+      "path": "sources/assets/02-weekly-position.png",
+      "status": 200,
+      "bytes": 2243507,
+      "seconds": 1.173,
+      "matchesLocal": true,
+      "sha256": "53a0b1d97a44da88629f31bed4d1d024d0a80a06f838d7c346bfaeae6b73116b"
+    },
+    {
+      "path": "sources/assets/03-sigil-design-sources.png",
+      "status": 200,
+      "bytes": 1743559,
+      "seconds": 1.132,
+      "matchesLocal": true,
+      "sha256": "6d026a5282a1a8dab83767acb35bf0dd9a236f946652c2d8a091440f61b6e4ab"
+    },
+    {
+      "path": "sources/assets/04-baseline-rhythm.png",
+      "status": 200,
+      "bytes": 1579201,
+      "seconds": 4.141,
+      "matchesLocal": true,
+      "sha256": "89029f90c04bd27bff69d626ead1254308109fcccff52482a08b88a1bf1b2a51"
+    },
+    {
+      "path": "sources/assets/05-rarity-selection.png",
+      "status": 200,
+      "bytes": 1686564,
+      "seconds": 1.117,
+      "matchesLocal": true,
+      "sha256": "7e76c7a91b117678230d05b1503af2d636255c3517ade5f795869c303fc744d0"
+    },
+    {
+      "path": "sources/assets/06-metaphor-rhythm.png",
+      "status": 200,
+      "bytes": 1391900,
+      "seconds": 1.182,
+      "matchesLocal": true,
+      "sha256": "67b90e2a1fdc30d190f7b5d8616b9c08ea1314c682312f37da12adf954a83837"
+    },
+    {
+      "path": "sources/assets/07-process-feedback.png",
+      "status": 200,
+      "bytes": 2056676,
+      "seconds": 1.978,
+      "matchesLocal": true,
+      "sha256": "bd0bef20fb711c5e9d32224289a698fb20a862253f397fd97398015e49fa12a4"
+    },
+    {
+      "path": "sources/assets/08-window-perception.png",
+      "status": 200,
+      "bytes": 1409943,
+      "seconds": 1.948,
+      "matchesLocal": true,
+      "sha256": "7067f2eee153534e3ed1c22d4aad739797d2633575ce7ca3756cca462f7e8954"
+    },
+    {
+      "path": "sources/assets/CLAUDE.md",
+      "status": 200,
+      "bytes": 1022,
+      "seconds": 0.547,
+      "matchesLocal": true,
+      "sha256": "ce433f84f817c4e8b3c79bc9d3b5970dd37705e106d88fc73ce0f884ba862eef"
+    },
+    {
+      "path": "sources/imagegen/01-mode-overview.md",
+      "status": 200,
+      "bytes": 5269,
+      "seconds": 0.539,
+      "matchesLocal": true,
+      "sha256": "0843e931ef3031a3c7992c97e85c2ea5aa3adce5e6f7bdf62979b8d2f801e4a6"
+    },
+    {
+      "path": "sources/imagegen/02-weekly-position.md",
+      "status": 200,
+      "bytes": 2583,
+      "seconds": 0.55,
+      "matchesLocal": true,
+      "sha256": "4548ca092193af8c88b48214d6eec94f0644c57fe00be3987959c3e2907e18e5"
+    },
+    {
+      "path": "sources/imagegen/03-sigil-design-sources.md",
+      "status": 200,
+      "bytes": 10828,
+      "seconds": 0.569,
+      "matchesLocal": true,
+      "sha256": "56d9ae4514748146395c029212b02835e3e43ce76dfc9ccc924ba657b8e62035"
+    },
+    {
+      "path": "sources/imagegen/04-baseline-rhythm.md",
+      "status": 200,
+      "bytes": 5309,
+      "seconds": 0.881,
+      "matchesLocal": true,
+      "sha256": "0722a51af8d428ba5985b58d8feb7c6c8de9b9b91b8160af53135fe9ca42498d"
+    },
+    {
+      "path": "sources/imagegen/05-rarity-selection.md",
+      "status": 200,
+      "bytes": 7389,
+      "seconds": 0.55,
+      "matchesLocal": true,
+      "sha256": "d234d8a9670aa927076f04b67394cace146c46b71a3408056561fdef2c0f44e0"
+    },
+    {
+      "path": "sources/imagegen/06-metaphor-rhythm.md",
+      "status": 200,
+      "bytes": 5080,
+      "seconds": 0.546,
+      "matchesLocal": true,
+      "sha256": "3241ee80fbfa6b1f4d69eb176dbf848181de87652b130b61ccceff87b008b69c"
+    },
+    {
+      "path": "sources/imagegen/07-process-feedback.md",
+      "status": 200,
+      "bytes": 8110,
+      "seconds": 0.519,
+      "matchesLocal": true,
+      "sha256": "37c9d9cf14d3c5346d0cd0f7b81fa42a06b51995f8de88c13b8723d44c911e27"
+    },
+    {
+      "path": "sources/imagegen/08-window-perception.md",
+      "status": 200,
+      "bytes": 4609,
+      "seconds": 0.511,
+      "matchesLocal": true,
+      "sha256": "7ac3efbc158badb3981bdc377e78e99750cbc031d939fa30acc8bbb171256e94"
+    },
+    {
+      "path": "sources/imagegen/CLAUDE.md",
+      "status": 200,
+      "bytes": 797,
+      "seconds": 0.541,
+      "matchesLocal": true,
+      "sha256": "889d87e4e7698a51aecce7e75bb0aca4e3796d7014d71cbcd5330df82d26d153"
+    },
+    {
+      "path": "sources/imagegen/README.md",
+      "status": 200,
+      "bytes": 2805,
+      "seconds": 0.552,
+      "matchesLocal": true,
+      "sha256": "9195645176c0dbccfab56af5c13f08e63f9e4dfeb37c21c2bd8c022d3a4d6bc3"
+    },
+    {
+      "path": "sources/records/CLAUDE.md",
+      "status": 200,
+      "bytes": 796,
+      "seconds": 0.568,
+      "matchesLocal": true,
+      "sha256": "b85953cb021eeba20813fae93d50115ddf5518507320fd6eff1beefe671996df"
+    },
+    {
+      "path": "sources/records/R03-修正稿.md",
+      "status": 200,
+      "bytes": 31187,
+      "seconds": 0.567,
+      "matchesLocal": true,
+      "sha256": "ae669510c6382e3415a7121ba0b358a07f361cfaaaeffbcd6868a10c5bb33436"
+    },
+    {
+      "path": "sources/records/R03-原始ASR.txt",
+      "status": 200,
+      "bytes": 20392,
+      "seconds": 0.553,
+      "matchesLocal": true,
+      "sha256": "3090d8757f2ae4b84914dce6ed5803a482416290b83f123db564c431773fa5c8"
+    },
+    {
+      "path": "sources/records/R04-修正稿.md",
+      "status": 200,
+      "bytes": 24591,
+      "seconds": 0.585,
+      "matchesLocal": true,
+      "sha256": "a4dc6234016e5677a5b629101029bf573a9ad17d996d8337de56834965b51a90"
+    },
+    {
+      "path": "sources/records/R04-原始ASR.txt",
+      "status": 200,
+      "bytes": 5914,
+      "seconds": 0.516,
+      "matchesLocal": true,
+      "sha256": "15890b2e6e3e1c8e5d4163841bde1c31dc9449082062e18f2195ed707bc73eb0"
+    },
+    {
+      "path": "sources/records/R05-修正稿.md",
+      "status": 200,
+      "bytes": 24537,
+      "seconds": 0.582,
+      "matchesLocal": true,
+      "sha256": "55d8d43e422e7725f1359d86732812c5cc92444d593e303904229e27dd9590ff"
+    },
+    {
+      "path": "sources/records/R05-原始ASR.txt",
+      "status": 200,
+      "bytes": 13451,
+      "seconds": 0.535,
+      "matchesLocal": true,
+      "sha256": "ba337aa7957e63079f5dc453788932c0e8b3c598b599d447fcc5f04e97d19e93"
+    },
+    {
+      "path": "sources/records/R06-修正稿.md",
+      "status": 200,
+      "bytes": 29920,
+      "seconds": 0.574,
+      "matchesLocal": true,
+      "sha256": "356a9652884616203498c4f848b01cbd46dc847ece58f096a4faef52b4683a58"
+    },
+    {
+      "path": "sources/records/R06-原始ASR.txt",
+      "status": 200,
+      "bytes": 15808,
+      "seconds": 1.591,
+      "matchesLocal": true,
+      "sha256": "d1c3ce251921d6a716609af9f9071045eec85a88b63db055f31785ca7a6545e2"
+    },
+    {
+      "path": "sources/records/README.md",
+      "status": 200,
+      "bytes": 2424,
+      "seconds": 0.573,
+      "matchesLocal": true,
+      "sha256": "520d1e115942c6afb81b06970ad23f2a43b4443cc9af3a234a675af2702365bc"
+    },
+    {
+      "path": "sources/source-manifest.json",
+      "status": 200,
+      "bytes": 7943,
+      "seconds": 0.59,
+      "matchesLocal": true,
+      "sha256": "d5cf2a5b96579d12656525385c6205d4e2cdd2be40667cdf1378d9e4986cd9fc"
+    },
+    {
+      "path": "sources/徽记触发核验.md",
+      "status": 200,
+      "bytes": 5654,
+      "seconds": 0.549,
+      "matchesLocal": true,
+      "sha256": "69a78252a9eaa2ea269b6cb4d00fa394bf7169fd8fb03a2a3b07ac17a06e627e"
+    },
+    {
+      "path": "sources/来源与方法.md",
+      "status": 200,
+      "bytes": 4987,
+      "seconds": 0.55,
+      "matchesLocal": true,
+      "sha256": "de3929fa4ca939c5093a2da8b2816bbb530d3a7b5cd23dffa5a04b8e51d188a5"
+    },
+    {
+      "path": "sources/系统拆解案.md",
+      "status": 200,
+      "bytes": 18724,
+      "seconds": 0.819,
+      "matchesLocal": true,
+      "sha256": "5a58d6010cf35368d41e9c51d5f6db939d0c5dc64a9068dcef9892fbb961ac8a"
+    },
+    {
+      "path": "style.css",
+      "status": 200,
+      "bytes": 5056,
+      "seconds": 0.535,
+      "matchesLocal": true,
+      "sha256": "58c940cb0c8785c203e18d141699acd160513f249d8c9b7d2e7575dca0d63fe0"
+    },
+    {
+      "path": "theme.css",
+      "status": 200,
+      "bytes": 9580,
+      "seconds": 0.588,
+      "matchesLocal": true,
+      "sha256": "8116af52d219dc1474eed205e97b94e8cfb84128fba66de8c31466b7a6164c61"
+    },
+    {
+      "path": "type-system.css",
+      "status": 200,
+      "bytes": 14794,
+      "seconds": 0.584,
+      "matchesLocal": true,
+      "sha256": "5fc88b8fd3fc181d920f91ebbd748ec0ce65c63675c9e61e9b13fb76b7456646"
+    },
+    {
+      "path": "typography-guide.md",
+      "status": 200,
+      "bytes": 5463,
+      "seconds": 0.562,
+      "matchesLocal": true,
+      "sha256": "8ef20861d52f7a5520fbf328a5c1a79a29ccd3a32c7098b767d370aba357eb07"
+    }
+  ]
+}
