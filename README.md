@@ -1,15 +1,19 @@
 <!--
 [INPUT]: 系统拆解正文、游玩证据、dist交互改编与GitHub Pages发布配置
-[OUTPUT]: 在线作品、离线HTML及原文入口与阅读顺序
-[POS]: 作品目录首页；原文承担研究证据，dist提供独立离线阅读与交互示意
+[OUTPUT]: 招聘阅读者首屏在线HTML入口、离线HTML及原文阅读顺序
+[POS]: 作品目录首页；固定在线作品优先呈现，原文和dist分别承担证据与离线阅读
 [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
 -->
 
 # 《鸣潮》千道门扉的异想系统拆解
 
+## 👉 [点击查看在线作品｜HTML 系统拆解与交互演示](https://meracle-sjj.github.io/wuwa-roguelike-system-analysis/)
+
+**建议先查看在线作品：无需下载或登录，可直接阅读完整分析并观看交互演示。**
+
 一份面向系统策划的个人研究作品，分析周度战斗玩法如何承接角色能力、支持局内构筑，并提出强化阶段的收益感知方案。
 
-**[在线交互作品](https://meracle-sjj.github.io/wuwa-roguelike-system-analysis/)** · [离线HTML v3](dist/index.html) · [发布与维护](DEPLOYMENT.md)
+[离线HTML v3](dist/index.html) · [发布与维护](DEPLOYMENT.md)
 
 来源架构、推荐优先选择、隐喻节奏及居合/普通攻击同栏对比直接呈现观点，状态作用单独成栏；统一字阶与本地字体提升阅读。原文、八图和记录保留。复制时保留整个dist/，含fonts版权文件；[使用说明](dist/README.md)与[作者补充](dist/revision-notes.md)可独立阅读。曲线非实测，提案未实装。
 

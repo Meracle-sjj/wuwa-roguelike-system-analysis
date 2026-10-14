@@ -19,7 +19,7 @@ preview/: 网页制作截图、验证报告与范围说明，不作为原研究�
 
 ## 根文件
 
-README.md: 面向作品阅读者的HTML/原文入口、核心问题和阅读顺序。
+README.md: 招聘阅读者首屏的醒目在线HTML入口，其后保留原文/离线阅读顺序。
 DEPLOYMENT.md: 固定作品网址、main持续发布步骤和大陆网络验证边界。
 package.json: Node 24维护命令与精确版本的jsdom/marked开发依赖，页面运行不依赖npm。
 package-lock.json: npm依赖解析锁，供本机与Actions一致核验，不随网页上线。
@@ -30,5 +30,7 @@ package-lock.json: npm依赖解析锁，供本机与Actions一致核验，不随
 CLAUDE.md: 独立发布目录地图，不依赖外部私有路径。
 
 维护：事实、体验、提案分开；颜色仅限基础主收益，解梦循环含进入/期间/退出。正文与图注同步，ASR原样归档；公开历史不含录音文件。新增网页导览、SVG曲线和事件演示是改编，不能写回原件冒充实测。dist完整复制可离线使用；用户授权将其发布到GitHub Pages，main推送需通过核验，线上只消费dist。配置与验证边界见DEPLOYMENT.md，实际部署以Actions成功记录及HTTPS访问为准。
+
+固定简历链接：https://meracle-sjj.github.io/wuwa-roguelike-system-analysis/ 。后续更新只改作品内容与部署版本，保持现有GitHub所有者/仓库名、dist/index.html入口、Pages地址和dist发布路径；除非用户明确要求迁移，不更换网址、不关闭Pages。README首屏优先呈现这一入口。
 
 [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
