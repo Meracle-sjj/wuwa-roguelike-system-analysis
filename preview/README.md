@@ -1,5 +1,5 @@
 <!--
-[INPUT]: 本地file URL核验报告与新网页浏览器截图。
+[INPUT]: 本地核验/截图、Pages资源哈希与用户无代理访问反馈。
 [OUTPUT]: 说明验证范围和未测内容，不替代原研究的来源与方法。
 [POS]: preview的制作证据说明；与dist/sources的研究证据分开。
 [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
@@ -20,5 +20,7 @@ v3浏览器核对1280px、390px及320px：设计起点20px、正文约18px、英
 维护复验：`WUWA_JSDOM_PATH=/path/to/jsdom node tools/verify-page.cjs`。报告只在核验全部通过时写出；浏览器截图与结论需要另行检查，不能靠重新生成报告自动更新。
 
 Pages首发：[Actions成功记录](https://github.com/Meracle-sjj/wuwa-roguelike-system-analysis/actions/runs/38512324717)，发布提交 `6b0f5581df6e81e356cebd8739712a47c23401b9`。[线上入口](https://meracle-sjj.github.io/wuwa-roguelike-system-analysis/)强制HTTPS，首页本机HTTP200且字节与本地一致。`publication-verification.json`保存全包HTTP/哈希结果及测量时间。此次线上浏览器工具连接超时，未重新做线上视觉验证，也未取得大陆多节点测速；上文浏览器截图仍是本地制作验证，不能当作国内可用性证据。
+
+2026-10-14 用户对无代理访问问题回复“可以直接打开”，补充当前用户真实网络访问成功的证据。它是用户报告，不是Agent运行的多节点或资源测量；未提供网络类型、运营商、地点或具体加载耗时。`publication-verification.json` 的 `userNetworkCheck` 单独保留该反馈，原有逐文件检查时间与部署提交不变。
 
 [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md

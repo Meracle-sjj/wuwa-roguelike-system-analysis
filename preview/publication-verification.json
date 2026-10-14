@@ -8,7 +8,7 @@
   "passed": true,
   "transport": "本机HTTP请求显式关闭环境代理；未判断系统VPN或客户端网络出口地区",
   "browserVerification": "上一版已在真实浏览器验证桌面/移动版式和动画；本次线上浏览器工具连接超时，未重新做线上视觉验证",
-  "mainlandVerification": "大陆第三方节点未取得结果；等待用户真实网络反馈",
+  "mainlandVerification": "2026-10-14 用户对无代理访问问题回复“可以直接打开”；本次用户真实网络访问成功，第三方大陆多节点仍未测量。",
   "files": [
     {
       "path": "CLAUDE.md",
@@ -642,5 +642,14 @@
       "matchesLocal": true,
       "sha256": "8ef20861d52f7a5520fbf328a5c1a79a29ccd3a32c7098b767d370aba357eb07"
     }
-  ]
+  ],
+  "userNetworkCheck": {
+    "reportedDate": "2026-10-14",
+    "timezone": "Asia/Shanghai",
+    "source": "用户回复无代理网络访问问题",
+    "response": "可以直接打开",
+    "result": "用户报告本次访问成功",
+    "siteUrl": "https://meracle-sjj.github.io/wuwa-roguelike-system-analysis/",
+    "scope": "当前用户网络；未提供具体网络类型、运营商、地点或耗时；不视为多节点测量"
+  }
 }

@@ -4,7 +4,7 @@
 成员清单
 README.md: 网页制作验证范围与复验入口，区别机器检查、可视检查和研究证据。
 verification.json: v3的25项装配、同栏/标注/销毁、推荐、接触、低动态、字体及来源核验。
-publication-verification.json: Pages部署记录与本机逐文件HTTP/SHA-256核验，单独标注线上视觉与大陆网络验证限制。
+publication-verification.json: Pages逐文件HTTP/SHA-256核验及独立用户无代理反馈，保留各自时间/来源与多节点验证边界。
 desktop.jpg: v1桌面首屏留档，后续论点与动画修订不从该图推断。
 rhythm.jpg: v1定性节奏双图留档。
 mobile.jpg: v1窄屏节奏留档。
