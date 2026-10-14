@@ -25,4 +25,6 @@ Pages首发：[Actions成功记录](https://github.com/Meracle-sjj/wuwa-roguelik
 
 状态栏补图：`v3-status-hud.png`是新绘`status-hud.svg`的原生渲染稿，已经检查火柴人、上下HUD、密集己方图标和两处框线标签；不是浏览器截图。此次浏览器连接仍超时，状态双图新排版尚未经过真实浏览器复验。两组共享`feedback-pair`的列宽/边框/900px断点，状态两图共享720×390画幅与标题区规则；旧浏览器截图只作为其对应版本的制作留档。
 
+本次状态双图已由[Actions成功发布](https://github.com/Meracle-sjj/wuwa-roguelike-system-analysis/actions/runs/38523311298)，提交`45a40d38124e4f32bbefd106a94eaecad8046d43`；8份变更文件的线上HTTP200/SHA-256与本地一致。记录写入`publication-verification.json`的`updates`，保留首发79份资源检查及用户反馈的原有时间与范围。
+
 [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md

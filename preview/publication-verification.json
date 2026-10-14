@@ -651,5 +651,65 @@
     "result": "用户报告本次访问成功",
     "siteUrl": "https://meracle-sjj.github.io/wuwa-roguelike-system-analysis/",
     "scope": "当前用户网络；未提供具体网络类型、运营商、地点或耗时；不视为多节点测量"
-  }
+  },
+  "updates": [
+    {
+      "revision": "状态反馈动画与既有HUD结构重绘双图",
+      "deploymentCommit": "45a40d38124e4f32bbefd106a94eaecad8046d43",
+      "actionsUrl": "https://github.com/Meracle-sjj/wuwa-roguelike-system-analysis/actions/runs/38523311298",
+      "checkedAt": "2026-10-14T06:40:50.459483+00:00",
+      "passed": true,
+      "files": [
+        {
+          "path": "index.html",
+          "status": 200,
+          "sha256": "57988a0e4b8ae24d0d5aa4683a0114db54f2dd89351b18eb3aa783f965278075",
+          "matchesLocal": true
+        },
+        {
+          "path": "feedback-scenes.css",
+          "status": 200,
+          "sha256": "5ea2a226a7d262514dd7fd685d2314cec8689ad587fb72631d0fb92fc6171390",
+          "matchesLocal": true
+        },
+        {
+          "path": "feedback-scenes.js",
+          "status": 200,
+          "sha256": "42c4f833828faaf3ea3bf328f39a9dc10719c5b7de486e05684e181e9b5a572d",
+          "matchesLocal": true
+        },
+        {
+          "path": "status-hud.svg",
+          "status": 200,
+          "sha256": "0e1bdde2cd0f9fdb0af9a9c9e301068553236b0120c399e9d7171df9a9db7a3a",
+          "matchesLocal": true
+        },
+        {
+          "path": "CLAUDE.md",
+          "status": 200,
+          "sha256": "6ec5e20e82f47634abf204aa9056aad539111ad570807788dc4161c41b033116",
+          "matchesLocal": true
+        },
+        {
+          "path": "README.md",
+          "status": 200,
+          "sha256": "36cf15a3084218acec121e8e65170de84be98190c643c2daa5920ed42217fca2",
+          "matchesLocal": true
+        },
+        {
+          "path": "feedback-scenes-contract.md",
+          "status": 200,
+          "sha256": "aa37760e95a0cf9774778bcd2861011d093fd8596115fb7e480af60e8aca8914",
+          "matchesLocal": true
+        },
+        {
+          "path": "revision-notes.md",
+          "status": 200,
+          "sha256": "0339ff352deae4cd09fac293f847c347e9bd985bdd9d1eff79d50e9a9be4910c",
+          "matchesLocal": true
+        }
+      ],
+      "visualProof": "preview/v3-status-hud.png为SVG原生渲染；本次浏览器排版复验未完成，工具连接超时"
+    }
+  ]
 }

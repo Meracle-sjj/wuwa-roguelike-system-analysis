@@ -19,6 +19,8 @@ GitHub 仓库仍保存研究原稿及公开来源。Pages 只发布 `dist/`，�
 2. 修改页面后运行 `npm run verify`，维护 L3 和对应 CLAUDE 地图。
 3. 提交并推送到 `main`。`.github/workflows/pages.yml` 校验通过后自动更新同一个网址，也可以手动运行工作流。
 
+改动已有样式或脚本时，同步更新入口中对应资源的版本后缀，避免客户端短期复用旧缓存。相对路径附带版本参数仍可离线阅读；作品入口网址保持不变。
+
 核验使用完整 Git 历史，逐字节核对固定提交 `fb160b19e5d5e19b306c9e3e8ea1f67ffd3458f2` 的34份原件。部署不重新构建原文；若确实需要刷新内容，按 dist/README.md 修改固定来源并运行 `npm run build:content`。
 
 发布过程遵循 [GitHub 官方 Pages 工作流说明](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。公开 Actions 运行记录提供实际成功/失败状态；目标网址的 HTTP 响应和浏览器加载需另行验证。
