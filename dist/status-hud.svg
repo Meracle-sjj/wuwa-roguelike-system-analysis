@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [INPUT]: 依赖用户提供的鸣潮实机截图的HUD位置关系，以及反馈舞台的火柴人/四角框视觉语言。
+ [OUTPUT]: 提供敌方生命条下方减益栏、己方生命条上方密集增益栏的720×390静态结构示意。
+ [POS]: dist第五章状态对照的右侧插图；与祈祷动画同尺度，不依赖游戏素材、外部字体或动画时钟。
+ [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="390" viewBox="0 0 720 390"
+  role="img" aria-labelledby="status-hud-title status-hud-desc">
+  <title id="status-hud-title">状态图标位于战斗视线之外</title>
+  <desc id="status-hud-desc">依照实机截图的位置关系重绘：画面顶部是敌方生命条，其下有两个减益图标；中央是交战的两个火柴人；底部己方生命条上方排列八个增益图标。四角框和引线指出两处状态栏。图标样式与数量仅为结构示意，不代表状态实测、徽记数值或新增界面方案。</desc>
+  <defs>
+    <radialGradient id="hud-floor-light" cx="55%" cy="58%" r="62%">
+      <stop offset="0" stop-color="#24342d" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#121518" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hud-target-health-fill" x1="0" x2="1">
+      <stop stop-color="#e1c084"/>
+      <stop offset="1" stop-color="#b48566"/>
+    </linearGradient>
+    <linearGradient id="hud-player-health-fill" x1="0" x2="1">
+      <stop stop-color="#a4ccba"/>
+      <stop offset="1" stop-color="#d5e2d7"/>
+    </linearGradient>
+    <symbol id="hud-blade" viewBox="0 0 24 24">
+      <path d="m7 17 9-12 3-1-1 4-9 11M5 15l6 5M4 21l4-4"/>
+    </symbol>
+    <symbol id="hud-shield" viewBox="0 0 24 24">
+      <path d="m12 3 7 3-1 9-6 6-6-6-1-9zM12 6v12"/>
+    </symbol>
+    <symbol id="hud-star" viewBox="0 0 24 24">
+      <path d="m12 3 2.5 6 6.5 3-6.5 3-2.5 6-2.5-6L3 12l6.5-3z"/>
+    </symbol>
+    <symbol id="hud-leaf" viewBox="0 0 24 24">
+      <path d="M6 18C3 11 8 5 19 4c0 11-6 16-13 14Zm0 0L16 8M6 18l-2 3"/>
+    </symbol>
+    <symbol id="hud-flame" viewBox="0 0 24 24">
+      <path d="M12 3c1 5 7 7 7 12 0 4-3 6-7 6s-7-2-7-6c0-3 2-5 4-7 0 3 1 4 3 5 2-4 0-7 0-10Z"/>
+    </symbol>
+    <symbol id="hud-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/>
+    </symbol>
+    <symbol id="hud-hex" viewBox="0 0 24 24">
+      <path d="m12 3 8 5v8l-8 5-8-5V8zM8 10l4-3 4 3v5l-4 3-4-3z"/>
+    </symbol>
+    <symbol id="hud-wave" viewBox="0 0 24 24">
+      <path d="M3 9c3-5 6 5 9 0s6 5 9 0M3 15c3-5 6 5 9 0s6 5 9 0"/>
+    </symbol>
+    <symbol id="hud-curse" viewBox="0 0 24 24">
+      <path d="M7 4v4L3 6l4 8 5 6 5-6 4-8-4 2V4M7 14l5-3 5 3M12 11V4"/>
+    </symbol>
+    <symbol id="hud-down" viewBox="0 0 24 24">
+      <path d="M12 3v13m-5-5 5 5 5-5M5 20h14"/>
+    </symbol>
+  </defs>
+  <style>
+    text { font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .hud-actor-line { fill:none; stroke:currentColor; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; }
+    .hud-actor-head { fill:#151619; stroke:currentColor; stroke-width:4.5; }
+    .hud-actor-far { opacity:.5; }
+    .hud-icon { fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+    .hud-chip { fill:#222c28; stroke:#79c9b658; stroke-width:1; }
+    .hud-target-chip { fill:#2d232e; stroke:#cb8dae68; stroke-width:1; }
+    .hud-callout { fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:square; }
+    .hud-label { font-size:26px; font-weight:500; letter-spacing:0; fill:currentColor; }
+    .hud-name { fill:#aaa79e; font-size:18px; letter-spacing:.06em; }
+  </style>
+  <!-- ========== 战斗空间：主体位置继承截图，不复刻游戏资产 ========== -->
+  <rect width="720" height="390" fill="#121518"/>
+  <rect width="720" height="390" fill="url(#hud-floor-light)"/>
+  <path d="M22 66V22h44M654 22h44v44M22 324v44h44M654 368h44v-44"
+    fill="none" stroke="#d9b77d46" stroke-width="1.2"/>
+  <ellipse cx="373" cy="284" rx="247" ry="37" fill="none" stroke="#81755f" stroke-opacity=".25"/>
+  <path d="M88 285h542M169 272h400M215 300h336M296 251l-73 49M447 250l77 51"
+    fill="none" stroke="#9b907522" stroke-width="1"/>
+  <ellipse cx="319" cy="276" rx="63" ry="10" fill="#000" opacity=".37"/>
+  <ellipse cx="448" cy="295" rx="68" ry="10" fill="#000" opacity=".37"/>
+  <g id="hud-target-actor" color="#c39daf">
+    <path class="hud-actor-line hud-actor-far" d="M313 173 287 191 281 222M318 221 299 248 285 273"/>
+    <path class="hud-actor-line" d="M314 164 318 219M318 219 341 243 355 272M315 177 341 186 353 215"/>
+    <circle class="hud-actor-head" cx="311" cy="146" r="17"/>
+    <path d="M302 148h6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <g id="hud-player-actor" color="#dde5dc">
+    <path class="hud-actor-line hud-actor-far" d="M448 234 475 242 476 260M445 266 461 282 483 296"/>
+    <path class="hud-actor-line" d="M450 229 443 267M443 267 428 278 407 296M448 237 422 249 393 240"/>
+    <circle class="hud-actor-head" cx="456" cy="211" r="18"/>
+    <path d="M443 212h6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="m394 240-16-8" fill="none" stroke="#d9b77d" stroke-width="4" stroke-linecap="round"/>
+    <path d="m378 232-37-20" fill="none" stroke="#e9e7df" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+  <!-- ========== 敌方HUD：生命条之下的小面积减益信息 ========== -->
+  <g id="hud-target-health" data-hud="enemy-health">
+    <text class="hud-name" x="361" y="31" text-anchor="middle">敌方</text>
+    <rect x="179" y="43" width="365" height="10" rx="5" fill="#24282a" stroke="#7c7f7840"/>
+    <rect x="180" y="44" width="248" height="8" rx="4" fill="url(#hud-target-health-fill)"/>
+  </g>
+  <g id="hud-target-debuffs" data-hud="enemy-debuffs" color="#c69bb3">
+    <rect class="hud-target-chip" x="340" y="67" width="27" height="27" rx="4"/>
+    <use class="hud-icon" href="#hud-curse" x="343" y="70" width="21" height="21"/>
+    <rect class="hud-target-chip" x="376" y="67" width="27" height="27" rx="4"/>
+    <use class="hud-icon" href="#hud-down" x="379" y="70" width="21" height="21"/>
+    <path d="m359 89 3-3 3 3-3 3Zm36 0 3-3 3 3-3 3Z" fill="#dac3d0" stroke="#2d232e" stroke-width="1"/>
+    <path class="hud-callout" d="M332 73V60h13M398 60h13v13M332 89v12h13M398 101h13V89M411 80h37l14 9h9"/>
+    <text class="hud-label" x="480" y="96">敌方减益栏</text>
+  </g>
+  <!-- ========== 己方HUD：八个不同轮廓挤在生命条上方 ========== -->
+  <g id="hud-player-buffs" data-hud="player-buffs" color="#9fc9b7">
+    <g transform="translate(244 313)">
+      <rect class="hud-chip" width="27" height="27" rx="4"/><use class="hud-icon" href="#hud-shield" x="3" y="3" width="21" height="21"/>
+    </g>
+    <g transform="translate(278 313)">
+      <rect class="hud-chip" width="27" height="27" rx="4"/><use class="hud-icon" href="#hud-blade" x="3" y="3" width="21" height="21"/>
+    </g>
+    <g transform="translate(312 313)" color="#cfbd88">
+      <rect class="hud-chip" width="27" height="27" rx="4"/><use class="hud-icon" href="#hud-sun" x="3" y="3" width="21" height="21"/>
+    </g>
+    <g transform="translate(346 313)">
+      <rect class="hud-chip" width="27" height="27" rx="4"/><use class="hud-icon" href="#hud-wave" x="3" y="3" width="21" height="21"/>
+    </g>
+    <g transform="translate(380 313)">
+      <rect class="hud-chip" width="27" height="27" rx="4"/><use class="hud-icon" href="#hud-flame" x="3" y="3" width="21" height="21"/>
+    </g>
+    <g transform="translate(414 313)" color="#cfbd88">
+      <rect class="hud-chip" width="27" height="27" rx="4"/><use class="hud-icon" href="#hud-star" x="3" y="3" width="21" height="21"/>
+    </g>
+    <g transform="translate(448 313)">
+      <rect class="hud-chip" width="27" height="27" rx="4"/><use class="hud-icon" href="#hud-leaf" x="3" y="3" width="21" height="21"/>
+    </g>
+    <g transform="translate(482 313)" color="#cfbd88">
+      <rect class="hud-chip" width="27" height="27" rx="4"/><use class="hud-icon" href="#hud-hex" x="3" y="3" width="21" height="21"/>
+    </g>
+    <path d="m297 335 3-3 3 3-3 3Zm136 0 3-3 3 3-3 3Zm68 0 3-3 3 3-3 3Z" fill="#cadbcb" stroke="#222c28" stroke-width="1"/>
+    <path class="hud-callout" d="M236 318v-12h14M503 306h14v12M236 335v12h14M503 347h14v-12M235 326h-36l-13 8h-11"/>
+    <text class="hud-label" x="34" y="340">己方增益栏</text>
+  </g>
+  <g id="hud-player-health" data-hud="player-health">
+    <rect x="237" y="357" width="280" height="9" rx="4.5" fill="#24282a" stroke="#7c7f7840"/>
+    <rect x="238" y="358" width="240" height="7" rx="3.5" fill="url(#hud-player-health-fill)"/>
+    <text class="hud-name" x="538" y="367">己方</text>
+  </g>
+</svg>

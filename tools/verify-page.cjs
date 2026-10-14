@@ -1,5 +1,5 @@
 /**
- * [INPUT]: dist动态入口、动作同栏结构、来源快照与jsdom，模拟可见性/帧时间并核对来源哈希。
+ * [INPUT]: dist入口、动作/状态双图及HUD结构、来源快照与jsdom，模拟帧时间并核对来源哈希。
  * [OUTPUT]: 静态可移植性、正文覆盖和真实条件边界的验证报告，不代替浏览器视觉检查。
  * [POS]: tools的本地核验入口；用file URL装配页面以验证无服务端依赖的阅读交互。
  * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
@@ -160,6 +160,32 @@ const normalize = value => value.replace(/\s+/gu,'');
     assert.equal($('.feedback-state-group').getAttribute('aria-labelledby'),'state-feedback-title');
     assert.equal($$('.feedback-action-pair header h4').length,2);
   });
+  check('状态双图并列，HUD图保留HP上下位置且无需新增时钟', () => {
+    const pair=$('.feedback-state-layout');
+    assert.equal(pair.children.length,2);
+    assert.equal($('#state-scene-root').parentElement,pair);
+    assert.equal($('.feedback-scene-hud').closest('.feedback-hud-column').parentElement,pair);
+    assert.equal($('#status-hud-image').getAttribute('src'),'./status-hud.svg');
+    assert.ok($('.feedback-hud-rule').textContent.includes('狂欢·浸染'));
+    const source=fs.readFileSync(path.join(dist,'status-hud.svg'),'utf8');
+    const svg=new JSDOM(source,{contentType:'image/svg+xml'}).window.document;
+    assert.equal(svg.documentElement.getAttribute('viewBox'),'0 0 720 390');
+    assert.equal($('#state-scene-root svg').getAttribute('viewBox'),svg.documentElement.getAttribute('viewBox'));
+    assert.ok(!svg.querySelector('script,animate,animateTransform,foreignObject,image'));
+    assert.equal(svg.querySelectorAll('#hud-player-buffs use').length,8);
+    assert.equal(svg.querySelectorAll('#hud-target-debuffs use').length,2);
+    const playerHealth=Number(svg.querySelector('#hud-player-health rect').getAttribute('y'));
+    const playerBuffs=Number(svg.querySelector('#hud-player-buffs g').getAttribute('transform').match(/\d+\s+(\d+)/u)[1]);
+    const enemyHealth=Number(svg.querySelector('#hud-target-health rect').getAttribute('y'));
+    const enemyDebuffs=Number(svg.querySelector('#hud-target-debuffs rect').getAttribute('y'));
+    assert.ok(playerBuffs<playerHealth);assert.ok(enemyDebuffs>enemyHealth);
+    svg.querySelectorAll('use').forEach(use=>assert.ok(svg.getElementById(use.getAttribute('href').slice(1))));
+    assert.ok(source.includes('数量仅为结构示意'));
+    svg.querySelectorAll('[href],[src]').forEach(element=>assert.ok((element.getAttribute('href')||element.getAttribute('src')).startsWith('#')));
+    assert.ok(!/file:|\/Users\/|url\(\s*['"]?https?:/u.test(source));
+    ['[INPUT]','[OUTPUT]','[POS]','[PROTOCOL]'].forEach(field=>assert.ok(source.includes(field)));
+    assert.ok(source.split('\n').length<=800);
+  });
   check('新增拳击普通接触有微量确认，蓄力重击没有同类提示', () => {
     const boxing=win.WuwaPage.boxing;
     const initial=boxing.getState();
@@ -280,7 +306,7 @@ const normalize = value => value.replace(/\s+/gu,'');
     Object.entries(win.WuwaPage).filter(([name])=>name!=='feedback').forEach(([,api])=>api.destroy());
     assert.equal(win.CaseMotion.getState().instances,0);
   });
-  const report={revision:'HTML v3 shared action comparison and consistent confirmation callouts',generatedAt:new Date().toISOString(),sourceCommit:manifest.commit,passed:true,checks,
+  const report={revision:'HTML v3 paired state animation and native HUD illustration',generatedAt:new Date().toISOString(),sourceCommit:manifest.commit,passed:true,checks,
     limitations:['jsdom不做排版、SVG视觉或键盘原生行为判断；这些另经真实浏览器检查。','曲线是定性规则解释，反馈是概念提案，均不代表游戏实测或实装。']};
   fs.writeFileSync(path.join(root,'preview/verification.json'),JSON.stringify(report,null,2)+'\n');
   win.close();

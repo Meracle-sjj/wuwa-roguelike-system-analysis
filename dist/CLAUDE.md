@@ -3,7 +3,7 @@
 
 成员清单
 README.md: 离线交付、交互边界、来源阅读顺序与模型无关Agent维护契约。
-index.html: 黑金动态拆解，居合/拳击同栏对照、状态独立；主页面直接表达观点，原文另作证据。
+index.html: 黑金动态拆解，动作双图与状态动画/HUD双图并列；主页面直接表达观点，原文另作证据。
 type-system.css: 最后加载的角色字阶，统一实质标题、正文、章眉、图注与图内文字。
 typography-guide.md: Carbon依据、中文字阶与发布阅读原则，不把项目字号当作外部标准。
 revision-notes.md: 作者补充的推荐优先策略与高频反馈意图，区别于固定v0.14原稿。
@@ -24,8 +24,9 @@ rhythm.js: 切换案例后从准备开始自动循环，前后同进程对照与
 rhythm.css: 节奏组件专用样式，不污染页面其它模块。
 rhythm-contract.md: 两个曲线案例的阶段、来源、定性范围与组件接入契约。
 feedback-scenes.js: 分宿主关节插值火柴人，刀圈/慢镜前斩与祈祷/敌我状态显现。
-feedback-scenes.css: 动作同栏对比、状态独立布局及共享四角框/引线的确认语言。
-feedback-scenes-contract.md: 抽象动作、不冒充游戏触发以及实际状态同步结束的契约。
+feedback-scenes.css: 动作同栏对比、状态双图布局及共享四角框/引线的确认语言。
+feedback-scenes-contract.md: 抽象动作、状态动画/HUD图的分工及实际状态同步结束的契约。
+status-hud.svg: 参照作者实机截图重绘，敌方HP下减益/己方HP上密集增益；火柴人、通用图标和定位引线。
 boxing-scene.js: 普通攻击接触同步微量提示、同款方框指明确认位置；蓄力/重击撤去，低动态保留接触帧。
 boxing-scene.css: 与居合同尺度的沙袋/拳手舞台、单列字幕和克制确认标注，消费共享视觉与字阶。
 boxing-scene-contract.md: 普通攻击/蓄力条件、标注时序、几何对齐及高频反馈设计边界。

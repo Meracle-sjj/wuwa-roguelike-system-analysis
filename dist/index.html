@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-[INPUT]: 原文及作者补充、来源树与动态舞台、CaseMotion、统一字阶和本地卡面字体。
+[INPUT]: 原文及作者补充、动态舞台与status-hud.svg、CaseMotion、统一字阶和本地字体。
 [OUTPUT]: 可离线打开的动态系统拆解，用架构与自动动画直接表达观点，并保留证据阅读。
 [POS]: dist唯一网站入口；主页面承担完整论证，固定提交原文只作独立复核依据。
 [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
@@ -105,12 +105,22 @@
       <div id="feedback-scenes-root">
         <section class="feedback-comparison" aria-labelledby="action-feedback-title">
           <header class="feedback-group-heading"><h3 id="action-feedback-title">动作触发反馈</h3><p>关键动作值得聚焦；频繁触发的动作，则需要不打扰、但可辨识的回应。</p></header>
-          <div class="feedback-action-pair"><div id="iaido-scene-root"></div><div id="boxing-scene-root"></div></div>
+          <div class="feedback-action-pair feedback-pair"><div id="iaido-scene-root"></div><div id="boxing-scene-root"></div></div>
           <div class="feedback-rule-copy"><h4>确认真实生效，避免教错动作。</h4><p>雷暴在有效触发时给一次主反馈，间隔内不误报；飓风区分原声骸与连锁，冰绽区分变奏与普通换人。领域自动伤害只表达收益，无法辨明来源时不宣称玩家完成了直接重击。</p></div>
         </section>
         <section class="feedback-state-group" aria-labelledby="state-feedback-title">
           <header class="feedback-group-heading"><h3 id="state-feedback-title">状态作用反馈</h3><p>动作之后，还要让玩家看清：谁变强了，谁变弱了，状态何时结束。</p></header>
-          <div class="feedback-state-layout"><div id="state-scene-root"></div><div class="feedback-rule-copy"><h4>对象、强弱与结束，都对应真实状态。</h4><p>狂欢·浸染在目标上显示狂乱层数与易伤；己方强化绑定实际增益，不能只因生命下降就越来越亮。心相以持续表现为主，关键层级轻提示，避免每次伤害都播放强音。</p></div></div>
+          <div class="feedback-state-layout feedback-pair">
+            <div id="state-scene-root"></div>
+            <div class="feedback-hud-column">
+            <section class="feedback-scene feedback-scene-hud" aria-labelledby="status-hud-title">
+              <header class="feedback-scene-heading"><span>现有界面 · 状态栏</span><h4 id="status-hud-title">图标已多，变化难辨。</h4><p>增益挤在角色生命条上方；减益留在敌方生命条下方。</p></header>
+              <figure class="feedback-hud-figure"><div class="feedback-scene-screen"><img id="status-hud-image" src="./status-hud.svg" alt="火柴人战斗中，己方生命条上方是密集的增益图标，敌方生命条下方是较小的减益图标；框线指出两处状态栏的位置。"></div><figcaption>状态图标分散在画面两端。再添一个图标，也容易混入已有信息。</figcaption></figure>
+              <div class="feedback-hud-rule"><h5>对象、强弱与结束，都对应真实状态。</h5><p>狂欢·浸染在目标上显示狂乱层数与易伤；己方强化绑定实际增益，不能只因生命下降就越来越亮。心相以持续表现为主，关键层级轻提示，避免每次伤害都播放强音。</p></div>
+              <p class="feedback-scene-boundary">参照用户提供的实机截图重绘；图标样式与数量作结构示意。左图为反馈提案，右图说明现有状态栏的信息密度。</p>
+            </section>
+            </div>
+          </div>
         </section>
       </div>
       <div class="argument-close"><span>用表现补认知，不堆计数器</span><p>角色已有心念、寒意、雪锈等资源。复用阶段信息，把新提示放到刀、身体和作用目标附近；多段命中合并主要确认，连锁表现降强度，状态结束同步清除，控制混音与动作遮挡。</p></div>

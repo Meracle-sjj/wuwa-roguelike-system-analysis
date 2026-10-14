@@ -3,7 +3,7 @@
 
 成员清单
 README.md: 网页制作验证范围与复验入口，区别机器检查、可视检查和研究证据。
-verification.json: v3的25项装配、同栏/标注/销毁、推荐、接触、低动态、字体及来源核验。
+verification.json: v3的26项装配、双图/HUD位置、标注/销毁、推荐、接触、低动态、字体及来源核验。
 publication-verification.json: Pages逐文件HTTP/SHA-256核验及独立用户无代理反馈，保留各自时间/来源与多节点验证边界。
 desktop.jpg: v1桌面首屏留档，后续论点与动画修订不从该图推断。
 rhythm.jpg: v1定性节奏双图留档。
@@ -18,6 +18,7 @@ v3-boxing.jpg: 同栏修订前的普通攻击局部反馈留档，短闪光仅�
 v3-mobile.jpg: v3窄屏推荐布局与可读字号截图，无页面横向溢出。
 v3-action-comparison.jpg: 居合/拳击同框并列，刀圈及普通攻击方框/引线同屏，已暂停定位。
 v3-action-mobile.jpg: 320px同框上下排列，普通攻击确认标注保持在视口内。
+v3-status-hud.png: status-hud.svg原生渲染稿，核对火柴人、两栏位置与图标；不是浏览器截图或实机画面。
 
 这里只记录网页制作证据，不作为原作机制来源；不会被dist页面引用。
 

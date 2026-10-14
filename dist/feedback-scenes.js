@@ -1,7 +1,7 @@
 /*
  * [INPUT]: CaseMotion 的可见性时钟、第五章动作确认与状态可见的提案边界。
  * [OUTPUT]: WuwaFeedbackScenes.mount，向独立动作/状态宿主提供两个原生 SVG 姿态动画。
- * [POS]: dist 的反馈表现模块；动作与拳击并列由入口编排，只消费共享时钟，不推断游戏规则。
+ * [POS]: dist 的反馈表现模块；两组对照由入口编排，只消费共享时钟，不推断游戏规则。
  * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
  */
 (function () {
@@ -47,7 +47,7 @@
   function stage(host, kind, title, subtitle, steps, description) {
     const section = document.createElement('section');
     section.className = `feedback-scene feedback-scene-${kind}`;
-    section.innerHTML = `<header class="feedback-scene-heading"><span>${kind === 'action' ? '关键动作 · 居合斩' : '作用对象 · 增益与减益'}</span><h4>${title}</h4><p>${subtitle}</p></header><div class="feedback-scene-screen"></div><div class="feedback-scene-caption"><span class="feedback-scene-phase"></span><p></p></div><ol class="feedback-scene-steps">${steps.map((step) => `<li>${step}</li>`).join('')}</ol><p class="feedback-scene-boundary">${description}</p>`;
+    section.innerHTML = `<header class="feedback-scene-heading"><span>${kind === 'action' ? '关键动作 · 居合斩' : '反馈提案 · 作用对象'}</span><h4>${title}</h4><p>${subtitle}</p></header><div class="feedback-scene-screen"></div><div class="feedback-scene-caption"><span class="feedback-scene-phase"></span><p></p></div><ol class="feedback-scene-steps">${steps.map((step) => `<li>${step}</li>`).join('')}</ol><p class="feedback-scene-boundary">${description}</p>`;
     host.appendChild(section);
     const screen = section.querySelector('.feedback-scene-screen');
     const id = `feedback-${kind}-${++serial}`;

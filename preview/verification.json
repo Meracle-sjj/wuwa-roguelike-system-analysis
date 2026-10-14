@@ -1,6 +1,6 @@
 {
-  "revision": "HTML v3 shared action comparison and consistent confirmation callouts",
-  "generatedAt": "2026-10-14T04:36:10.387Z",
+  "revision": "HTML v3 paired state animation and native HUD illustration",
+  "generatedAt": "2026-10-14T06:35:52.401Z",
   "sourceCommit": "fb160b19e5d5e19b306c9e3e8ea1f67ffd3458f2",
   "passed": true,
   "checks": [
@@ -54,6 +54,10 @@
     },
     {
       "name": "居合与拳击同栏对照，状态另成一栏且标题层级一致",
+      "passed": true
+    },
+    {
+      "name": "状态双图并列，HUD图保留HP上下位置且无需新增时钟",
       "passed": true
     },
     {

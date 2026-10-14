@@ -1,6 +1,6 @@
 /*
- * [INPUT]: feedback-scenes.js 的 SVG 姿态，以及入口的动作对照栏和独立状态栏。
- * [OUTPUT]: 居合/拳击同栏布局、共用确认标注语言与状态舞台的窄屏阅读样式。
+ * [INPUT]: feedback-scenes.js 的 SVG 姿态、status-hud.svg 和入口的两组对照栏。
+ * [OUTPUT]: 动作双图、状态动画/HUD双图、共用确认标注与窄屏阅读样式。
  * [POS]: dist 的反馈布局与基础舞台样式；拳击复用确认标注，所有动态进程由 CaseMotion 驱动。
  * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
  */
@@ -12,18 +12,18 @@
 .feedback-group-heading p {
   margin:0; color:var(--muted); font-size:var(--type-body); line-height:var(--type-body-line);
 }
-.feedback-action-pair {
+.feedback-pair {
   display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
   border:1px solid #d9b77d40; background:var(--panel);
 }
-.feedback-action-pair>div { min-width:0; }
-.feedback-action-pair>div+div { border-left:1px solid #d9b77d40; }
-.feedback-action-pair .feedback-scene,.feedback-action-pair .boxing-scene {
+.feedback-pair>* { min-width:0; }
+.feedback-pair>*+* { border-left:1px solid #d9b77d40; }
+.feedback-pair .feedback-scene,.feedback-pair .boxing-scene {
   display:flex; flex-direction:column; height:100%; border:0; margin:0;
 }
-.feedback-action-pair .feedback-scene-boundary,.feedback-action-pair .boxing-boundary { margin-top:auto; }
-.feedback-action-pair .feedback-scene-heading,.feedback-action-pair .boxing-heading {
-  min-height:172px; box-sizing:border-box;
+.feedback-pair .feedback-scene-boundary,.feedback-pair .boxing-boundary { margin-top:auto; }
+.feedback-pair .feedback-scene-heading,.feedback-pair .boxing-heading {
+  min-height:184px; box-sizing:border-box;
 }
 .feedback-rule-copy { padding:24px 0; }
 .feedback-rule-copy h4 {
@@ -32,18 +32,28 @@
 .feedback-rule-copy p {
   margin:0; color:var(--muted); font-size:var(--type-body); line-height:var(--type-body-line);
 }
-.feedback-state-layout {
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px; align-items:center;
+.feedback-state-layout { border-color:#79c9b634; }
+.feedback-state-layout>*+* { border-left-color:#79c9b634; }
+.feedback-state-layout .feedback-scene { box-sizing:border-box; }
+.feedback-hud-figure { margin:0; }
+.feedback-hud-figure img { display:block; width:100%; height:auto; }
+.feedback-hud-figure figcaption {
+  margin:0 27px; padding:19px 0 18px; border-top:1px solid var(--line);
+  color:var(--muted); font-size:var(--type-body); line-height:var(--type-body-line);
 }
-.feedback-state-layout>div { min-width:0; }
-.feedback-state-layout .feedback-rule-copy h4 { color:var(--jade); }
-.feedback-state-layout .feedback-rule-copy { padding:28px 0; }
+.feedback-hud-rule { margin:0 27px 25px; }
+.feedback-hud-rule h5 {
+  margin:0 0 10px; color:var(--jade); font-size:var(--type-subtitle); line-height:1.5; font-weight:500;
+}
+.feedback-hud-rule p {
+  margin:0; color:#cfcdc5; font-size:var(--type-body); line-height:var(--type-body-line);
+}
 .feedback-scene {
   min-width:0; border:1px solid #d9b77d40;
   background:linear-gradient(150deg,#241d125c,transparent 48%),var(--panel,#121518);
   overflow:hidden;
 }
-.feedback-scene-state {
+.feedback-scene-state,.feedback-scene-hud {
   border-color:#79c9b634;
   background:linear-gradient(150deg,#18262252,transparent 48%),var(--panel,#121518);
 }
@@ -53,7 +63,7 @@
 .feedback-scene-heading>span {
   font-size:10px; letter-spacing:.08em; color:var(--gold,#d9b77d);
 }
-.feedback-scene-state .feedback-scene-heading>span {
+.feedback-scene-state .feedback-scene-heading>span,.feedback-scene-hud .feedback-scene-heading>span {
   color:var(--jade,#79c9b6);
 }
 .feedback-scene-heading h4 {
@@ -205,10 +215,10 @@
   background:#00000016; color:#9c9990; font-size:11px; line-height:1.85;
 }
 @media (max-width:900px) {
-  .feedback-action-pair,.feedback-state-layout { grid-template-columns:1fr; }
-  .feedback-action-pair>div+div { border-left:0; border-top:1px solid #d9b77d40; }
-  .feedback-action-pair .feedback-scene-heading,.feedback-action-pair .boxing-heading { min-height:0; }
-  .feedback-state-layout { gap:0; }
+  .feedback-pair { grid-template-columns:1fr; }
+  .feedback-pair>*+* { border-left:0; border-top:1px solid #d9b77d40; }
+  .feedback-state-layout>*+* { border-top-color:#79c9b634; }
+  .feedback-pair .feedback-scene-heading,.feedback-pair .boxing-heading { min-height:0; }
   .feedback-scene-heading { padding:24px 25px 6px; }
   .feedback-scene-screen { max-width:700px; margin:0 auto; }
   .feedback-scene-caption { min-height:96px; }
@@ -222,8 +232,9 @@
   .feedback-scene-caption p { font-size:12px; }
   .feedback-scene-steps { margin:0 18px 18px; gap:6px; }
   .feedback-scene-boundary { padding:16px 18px 19px; }
+  .feedback-hud-figure figcaption,.feedback-hud-rule { margin-left:20px; margin-right:20px; }
 }
 @media print {
-  .feedback-action-pair,.feedback-state-layout { display:block; }
+  .feedback-pair { display:block; }
   .feedback-scene { break-inside:avoid; margin-bottom:20px; }
 }
