@@ -1,6 +1,6 @@
 /*
  * [INPUT]: hierarchy.js的来源节点/单一坚盾/分层容器与theme.css黑金青玉令牌。
- * [OUTPUT]: 既有能力到徽记的来源架构、基础节奏与移动端保留层级的布局。
+ * [OUTPUT]: 既有能力到徽记的来源架构、主观体验纵轴与基础节奏、移动端保留层级的布局。
  * [POS]: dist构筑入口专用主题；具体机制定位由CSS提供，SVG连线由组件测量。
  * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
  */
@@ -60,6 +60,8 @@
 .hierarchy-baseline-line { stroke:var(--gold); stroke-width:2; fill:none; }
 .hierarchy-baseline-jade .hierarchy-baseline-line { stroke:var(--jade); }
 .hierarchy-baseline text { fill:var(--muted); font-size:11px; font-family:var(--sans); }
+.hierarchy-baseline .hierarchy-baseline-axis-label { fill:var(--text); font-weight:500; }
+.hierarchy-baseline .hierarchy-baseline-measurement { text-align:right; font-size:var(--type-caption,14px); line-height:1.65; margin:0 0 10px; }
 .hierarchy-baseline p { font-size:12px; color:var(--muted); line-height:1.85; margin:0; }
 .hierarchy-baseline-scope { color:var(--muted); font-size:11px; line-height:1.9; margin:16px 0 29px; }
 .hierarchy-arguments { display:grid; grid-template-columns:1fr 1fr 1fr; gap:30px; border-top:1px solid var(--line); padding-top:25px; }

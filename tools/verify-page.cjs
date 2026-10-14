@@ -1,5 +1,5 @@
 /**
- * [INPUT]: dist入口、动作/状态双图及HUD结构、来源快照与jsdom，模拟帧时间并核对来源哈希。
+ * [INPUT]: dist入口、章节对话框/关键文案/主观纵轴、动态组件及固定来源快照。
  * [OUTPUT]: 静态可移植性、正文覆盖和真实条件边界的验证报告，不代替浏览器视觉检查。
  * [POS]: tools的本地核验入口；用file URL装配页面以验证无服务端依赖的阅读交互。
  * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
@@ -55,18 +55,36 @@ const normalize = value => value.replace(/\s+/gu,'');
   const $ = selector => doc.querySelector(selector);
   const $$ = selector => [...doc.querySelectorAll(selector)];
   check('离线file URL成功初始化，无脚本异常', () => { assert.deepEqual(errors,[]); assert.ok(win.WuwaPage.rhythm); });
-  check('六章、八原图、四局全文与证据附件已装配', () => {
-    assert.equal($$('#full-article details').length,6);
-    assert.equal($$('#figure-gallery button').length,8);
+  check('六章、八原图来源、四局记录与章节入口已装配', () => {
+    assert.equal($$('section.chapter').length,6);
+    assert.equal(win.WuwaContent.figures.length,8);
+    assert.equal($$('[data-open-article]').length,6);
     assert.equal($$('#record-list button').length,4);
-    assert.ok($('#original-method').textContent.includes('来源'));
-    assert.ok($('#original-audit').textContent.includes('霜灭'));
+    assert.ok(win.WuwaContent.methodHtml.includes('来源'));
+    assert.ok(win.WuwaContent.auditHtml.includes('霜灭'));
   });
-  check('完整原稿导言与六章的可见文字没有删节', () => {
-    const original = win.WuwaContent.article.introHtml + win.WuwaContent.article.sections.map(s=>s.html).join('');
-    const parsed = new JSDOM(original).window.document.body.textContent;
-    const displayed = $('#original-intro').textContent + $$('#full-article .prose').map(e=>e.textContent).join('');
-    assert.equal(normalize(displayed),normalize(parsed));
+  check('六章原文改为按需对话框，原文文字无删节', () => {
+    for(const section of win.WuwaContent.article.sections) {
+      const trigger=$(`[data-open-article="${section.id}"]`);trigger.click();
+      assert.equal($('#document-dialog').open,true);
+      assert.equal($('#document-dialog-title').textContent,section.title);
+      const copy=$('#document-dialog-body').cloneNode(true);
+      copy.querySelector('.source-document-link').remove();
+      const parsed=new JSDOM(section.html).window.document.body.textContent;
+      assert.equal(normalize(copy.textContent),normalize(parsed));
+      $('#document-dialog [data-close-dialog]').click();
+      assert.equal(doc.activeElement,trigger);
+    }
+    assert.ok(win.WuwaContent.article.introHtml.length>0);
+  });
+  check('关键机制与探索空间突出，系统推荐/测试目的取代旧文案', () => {
+    assert.equal($$('.key-statement').length,2);
+    assert.ok($('#entry .key-statement').textContent.includes('动作成为触发入口'));
+    assert.ok($('#build .key-statement').textContent.includes('深度探索'));
+    const text=$('#build').textContent;
+    assert.ok(text.includes('不愿详细阅读效果的玩家'));assert.ok(text.includes('每周奖励'));
+    assert.ok(text.includes('系统推荐'));assert.ok(!text.includes('大拇指'));
+    assert.ok(!text.includes('19次不含开局和商店'));
   });
   check('全部本地链接、图片、脚本、样式与页内锚点存在', () => {
     for (const element of $$('[href],[src]')) {
@@ -85,6 +103,13 @@ const normalize = value => value.replace(/\s+/gu,'');
     assert.equal($$('[data-hierarchy-target="shield"]').length,2);
     assert.equal($$('[data-hierarchy-kind="gold"]').length,4);assert.equal($$('[data-hierarchy-kind="jade"]').length,8);
     assert.equal(win.WuwaPage.hierarchy.getState().groups.length,4);
+  });
+  check('两类基础节奏标明预期体验纵轴与非测量范围', () => {
+    assert.equal($$('[data-hierarchy-metric="expected-experience"]').length,2);
+    assert.equal($$('.hierarchy-baseline-y-axis').length,2);
+    assert.ok($$('.hierarchy-baseline-axis-label').every(label=>label.textContent==='预期体验'));
+    assert.ok($$('.hierarchy-baseline-measurement').every(label=>label.textContent==='非实际测量'));
+    assert.ok($('.hierarchy-scope').textContent.includes('本人分析分组'));
   });
   frame();frame(80);
   check('可见即自动播放，页面不提供启动/拖动门槛', () => {
@@ -123,7 +148,7 @@ const normalize = value => value.replace(/\s+/gu,'');
     assert.equal(cards[0].dataset.recommended,'false');assert.equal(cards[2].dataset.recommended,'true');
     assert.equal(cards[2].dataset.selected,'true');assert.equal(cards[0].dataset.selected,'false');
     assert.ok(cards[2].querySelector('.selection-thumb path'));
-    assert.ok($('#selection-root').textContent.includes('作者补充'));
+    assert.ok($('#selection-root').textContent.includes('本人补充'));
     assert.ok($('.build-result').textContent.includes('电挚'));
   });
   check('04切换案例重回准备并保持自动循环策略', () => {
@@ -276,10 +301,11 @@ const normalize = value => value.replace(/\s+/gu,'');
     $('[data-open-document="audit"]').click();assert.ok($('#document-dialog-body').textContent.includes('霜灭'));
     $('#document-dialog [data-close-dialog]').click();
   });
-  check('正文全部展开/收起及深链定位', () => {
-    $('#toggle-all').click();assert.ok($$('#archive details').every(d=>d.open));
-    $('#toggle-all').click();assert.ok($$('#archive details').every(d=>!d.open));
-    win.location.hash='full-metaphor-rhythm';win.dispatchEvent(new win.Event('hashchange'));assert.equal($('#full-metaphor-rhythm').open,true);
+  check('结束索引与图库移除，页尾只保留原仓库入口', () => {
+    assert.equal($('#archive'),null);assert.equal($('#figure-gallery'),null);assert.equal($('#toggle-all'),null);
+    assert.equal($('.site-footer').children.length,1);
+    assert.equal($('.site-footer a').href,'https://github.com/Meracle-sjj/wuwa-roguelike-system-analysis');
+    assert.equal($$('[href^="#full-"]').length,0);
   });
   const manifest = JSON.parse(fs.readFileSync(path.join(dist,'sources/source-manifest.json'),'utf8'));
   check('34份来源原件与八图保持固定提交SHA-256', () => {
@@ -306,7 +332,7 @@ const normalize = value => value.replace(/\s+/gu,'');
     Object.entries(win.WuwaPage).filter(([name])=>name!=='feedback').forEach(([,api])=>api.destroy());
     assert.equal(win.CaseMotion.getState().instances,0);
   });
-  const report={revision:'HTML v3 paired state animation and native HUD illustration',generatedAt:new Date().toISOString(),sourceCommit:manifest.commit,passed:true,checks,
+  const report={revision:'HTML v3 focused arguments, subjective axes and simplified repository ending',generatedAt:new Date().toISOString(),sourceCommit:manifest.commit,passed:true,checks,
     limitations:['jsdom不做排版、SVG视觉或键盘原生行为判断；这些另经真实浏览器检查。','曲线是定性规则解释，反馈是概念提案，均不代表游戏实测或实装。']};
   fs.writeFileSync(path.join(root,'preview/verification.json'),JSON.stringify(report,null,2)+'\n');
   win.close();

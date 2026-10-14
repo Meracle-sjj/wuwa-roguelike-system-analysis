@@ -1,6 +1,6 @@
 /**
  * [INPUT]: 依赖正文第二章、图3来源拓扑、图4基础节奏及theme.css共享色值，不依赖游戏或网络。
- * [OUTPUT]: 提供 window.WuwaHierarchy.mount(host)，呈现13个来源到12个徽记的分层映射与基础节奏。
+ * [OUTPUT]: 提供 window.WuwaHierarchy.mount(host)，呈现13个来源到12个徽记的分层映射与带主观体验纵轴的基础节奏。
  * [POS]: dist的构筑入口论证；DOM保留原图分组与单一坚盾节点，SVG只绘制具体机制间的连线。
  * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
  */
@@ -44,12 +44,16 @@
     const gold = kind === 'gold';
     return `<div class="hierarchy-baseline hierarchy-baseline-${kind}">
       <div class="hierarchy-baseline-title"><i></i><h4>${gold ? '常态可用，入梦增强' : '主收益依赖解梦循环'}</h4></div>
-      <svg viewBox="0 0 500 126" role="img" aria-label="${gold ? '常态有基础反馈，解梦内增强' : '准备期等待，解梦循环兑现主收益'}；两条曲线共用窗口与相同示意峰值">
+      <svg viewBox="-64 -16 564 152" role="img" data-hierarchy-metric="expected-experience" aria-label="${gold ? '常态有基础反馈，解梦内增强' : '准备期等待，解梦循环兑现主收益'}；纵轴为预期体验，由低到高；两条曲线共用窗口与相同示意峰值，非实际测量">
         <rect class="hierarchy-dream-zone" x="205" y="14" width="118" height="75" rx="2"></rect>
         <path class="hierarchy-baseline-axis" d="M18 91H480"></path>
+        <path class="hierarchy-baseline-axis hierarchy-baseline-y-axis" d="M18 91V14M14 21L18 14L22 21"></path>
+        <text class="hierarchy-baseline-axis-label" x="-34" y="53" text-anchor="middle" transform="rotate(-90 -34 53)">预期体验</text>
+        <text class="hierarchy-baseline-level" x="4" y="27" text-anchor="end">高</text><text class="hierarchy-baseline-level" x="4" y="90" text-anchor="end">低</text>
         <path class="hierarchy-baseline-line" d="${gold ? 'M18 71L54 67L85 72L116 68L148 72L181 67L205 70L224 59L246 25L264 20L284 25L305 58L323 70L355 67L385 72L416 68L449 72L480 67' : 'M18 87H205L224 59L246 25L264 20L284 25L305 58L323 87H480'}"></path>
         <text x="105" y="115" text-anchor="middle">常态准备</text><text x="264" y="115" text-anchor="middle">解梦阶段</text><text x="400" y="115" text-anchor="middle">退出 / 再准备</text>
       </svg>
+      <p class="hierarchy-baseline-measurement">非实际测量</p>
       <p>${gold ? '日常操作已有反馈，再安排强化时机。' : '准备资源、开启状态，再兑现标志性收益。时驭的结算发生在退出后。'}</p>
     </div>`;
   }
@@ -65,7 +69,7 @@
         ${BADGES.map(([id,label,kind,row,mobile,span = 1,mobileSpan = 1]) => `<div class="hierarchy-badge hierarchy-badge-${kind} ${id === 'shield' ? 'hierarchy-badge-shared' : ''}" data-hierarchy-badge="${id}" data-hierarchy-kind="${kind}" style="--row:${row};--span:${span};--mobile-row:${mobile};--mobile-span:${mobileSpan}"><strong>${label}</strong>${id === 'shield' ? '<small>重击 × 护盾</small>' : ''}</div>`).join('')}
       </div>
       <div class="hierarchy-color-key"><span><i class="hierarchy-key-gold"></i>常态可用，入梦增强 <b>4</b></span><span><i class="hierarchy-key-jade"></i>主收益依赖解梦循环 <b>8</b></span></div>
-      <p class="hierarchy-scope">按基础徽记主效果归类 · 隐喻可改写 · 作者分析分组，非官方设计分类</p>
+      <p class="hierarchy-scope">按基础徽记主效果归类 · 隐喻可改写 · 本人分析分组，非官方设计分类</p>
     </div>`;
   }
 
@@ -85,7 +89,7 @@
       <div class="hierarchy-dream-header"><div><span>公共条件</span><h3>解梦循环，组织基础反馈节奏。</h3></div><p>进入 <i>→</i> 期间 <i>→</i> 退出</p></div>
       <div class="hierarchy-baselines">${rhythmIllustration('gold')}${rhythmIllustration('jade')}</div>
       <p class="hierarchy-baseline-scope">共用解梦窗口与相同示意峰值，只比较收益时段，不比较数值强弱。颜色不代表整套构筑的开关，常态准备、辅助效果与隐喻条件分别判断。</p>
-      <div class="hierarchy-arguments"><div><span>入口改变队伍循环</span><p>频繁大招、轮换声骸、积盾后重击、持续施加异常，需要的资源与频度各不相同。治疗角色也可能通过声骸参与构筑。</p></div><div><span>动作来源 ≠ 伤害类别</span><p>冰绽由变奏触发，追加输出归为共鸣技能伤害；狂欢的周期输出归为普攻伤害。坚盾·领域生成重击类伤害，也不代表角色执行了重击动作。</p></div><div><span>拥有动作 ≠ 顺畅重复</span><p>坚盾局中作者从绯雪改用千咲；飓风局因声骸冷却轮换三人。适配既要看能否触发，也要看动作条件、资源与使用频度。</p></div></div>`;
+      <div class="hierarchy-arguments"><div><span>入口改变队伍循环</span><p>频繁大招、轮换声骸、积盾后重击、持续施加异常，需要的资源与频度各不相同。治疗角色也可能通过声骸参与构筑。</p></div><div><span>动作来源 ≠ 伤害类别</span><p>冰绽由变奏触发，追加输出归为共鸣技能伤害；狂欢的周期输出归为普攻伤害。坚盾·领域生成重击类伤害，也不代表角色执行了重击动作。</p></div><div><span>拥有动作 ≠ 顺畅重复</span><p>坚盾局中本人从绯雪改用千咲；飓风局因声骸冷却轮换三人。适配既要看能否触发，也要看动作条件、资源与使用频度。</p></div></div>`;
 
     // --- 节点由 CSS 负责排版；连线测量真实边界，避免宽屏/手机另造两套拓扑。 ---
     function draw() {

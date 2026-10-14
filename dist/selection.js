@@ -1,5 +1,5 @@
 /**
- * [INPUT]: 正文第三章、R04修正稿、作者修订的推荐优先展示与共享CaseMotion可见性时钟。
+ * [INPUT]: 正文第三章、R04修正稿、本人修订的系统推荐展示与共享CaseMotion可见性时钟。
  * [OUTPUT]: window.WuwaSelection.mount(host)，提供推荐优先、品质取舍与向下沉积的三选一动画。
  * [POS]: dist第三章的独立观点演示；选择流程由本组件渲染，播放生命周期由motion.js管理。
  * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
@@ -83,9 +83,9 @@
           <rect x="0" y="435" width="1000" height="65" fill="url(#${prefix}-floor)" pointer-events="none"/>
         </svg>
       </div>
-      <figcaption class="selection-caption"><strong class="selection-status">优先参考推荐</strong><span class="selection-reason">没有推荐时比品质，同档取最左。</span></figcaption>
+      <figcaption class="selection-caption"><strong class="selection-status">优先参考系统推荐</strong><span class="selection-reason">没有推荐时比品质，同档取最左。</span></figcaption>
       <div class="selection-legend" aria-label="品质与推荐图例"><span class="selection-ordinary"><i></i>普通</span><span class="selection-advanced"><i></i>高级</span><span class="selection-special"><i></i>特级 / 徽记强化</span><span class="selection-recommended"><svg viewBox="-28 -25 60 55" aria-hidden="true" focusable="false">${THUMB}</svg>推荐</span><span class="selection-legend-rule">先推荐 → 再比品质 → 同档最左</span></div>
-      <p class="selection-boundary">依据：R04研究与作者补充；候选重绘，仅呈现选择原则。</p>
+      <p class="selection-boundary">依据：R04记录与本人补充；候选重绘，仅呈现选择原则。</p>
       <div class="selection-build-support" aria-label="构筑成型的四层支持">
         <span><small>01 / 方向</small><b>开局徽记</b><em>先选构筑入口</em></span>
         <span><small>02 / 深化</small><b>配套核心</b><em>继续强化方向</em></span>
@@ -156,8 +156,8 @@
       paintRow(rows.previous,roundIndex-1,'previous',410+move*265,.925,(1-move)*.55,true,.3);
       paintRow(rows.current,roundIndex,'current',145+move*265,1-move*.075,1,true===chosen,.45+.55*Math.sin(clamp((local-.44)/.28)*Math.PI));
       paintRow(rows.next,roundIndex+1,'next',-270+move*415,1,move,false,0);
-      const nextStatus = phase===3 ? '选择线索，降低连续取舍的阅读负担' : winnerReason==='recommendation' ? (chosen ? '看见推荐，优先选择' : '先看大拇指推荐') : winnerReason==='leftmost' ? (chosen ? '无推荐同档，取最左' : '没有推荐，再比较品质') : (chosen ? '无推荐，选最高品质' : '没有推荐，再比较品质');
-      const nextReason = phase===3 ? '徽记确定方向，核心和通用隐喻逐步补足构筑。' : winnerReason==='recommendation' ? '两张同档金卡中，带大拇指的徽记强化先被选中。' : winnerReason==='leftmost' ? '最高档出现多个，用左侧位置作简单取舍。' : `${RARITIES[round[winner].rarity].label}是这一组的最高档。`;
+      const nextStatus = phase===3 ? '选择线索，降低连续取舍的阅读负担' : winnerReason==='recommendation' ? (chosen ? '看见系统推荐，优先选择' : '先参考系统推荐') : winnerReason==='leftmost' ? (chosen ? '无推荐同档，取最左' : '没有推荐，再比较品质') : (chosen ? '无推荐，选最高品质' : '没有推荐，再比较品质');
+      const nextReason = phase===3 ? '徽记确定方向，核心和通用隐喻逐步补足构筑。' : winnerReason==='recommendation' ? '两张同档金卡中，带系统推荐标识的徽记强化先被选中。' : winnerReason==='leftmost' ? '最高档出现多个，用左侧位置作简单取舍。' : `${RARITIES[round[winner].rarity].label}是这一组的最高档。`;
       if (status.textContent!==nextStatus) status.textContent=nextStatus;
       if (reason.textContent!==nextReason) reason.textContent=nextReason;
       snapshot = { progress:p, round:roundIndex, phase, selected:winner, rarity:round[winner].rarity, recommended, recommendedOptions, winnerReason, tied, previousVisible:move<.45, local, moving:move>0 };

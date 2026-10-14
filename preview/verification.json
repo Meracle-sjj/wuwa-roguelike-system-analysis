@@ -1,6 +1,6 @@
 {
-  "revision": "HTML v3 paired state animation and native HUD illustration",
-  "generatedAt": "2026-10-14T06:35:52.401Z",
+  "revision": "HTML v3 focused arguments, subjective axes and simplified repository ending",
+  "generatedAt": "2026-10-14T07:01:02.641Z",
   "sourceCommit": "fb160b19e5d5e19b306c9e3e8ea1f67ffd3458f2",
   "passed": true,
   "checks": [
@@ -9,11 +9,15 @@
       "passed": true
     },
     {
-      "name": "六章、八原图、四局全文与证据附件已装配",
+      "name": "六章、八原图来源、四局记录与章节入口已装配",
       "passed": true
     },
     {
-      "name": "完整原稿导言与六章的可见文字没有删节",
+      "name": "六章原文改为按需对话框，原文文字无删节",
+      "passed": true
+    },
+    {
+      "name": "关键机制与探索空间突出，系统推荐/测试目的取代旧文案",
       "passed": true
     },
     {
@@ -22,6 +26,10 @@
     },
     {
       "name": "02保留四组13来源到12徽记，坚盾是单节点双来源",
+      "passed": true
+    },
+    {
+      "name": "两类基础节奏标明预期体验纵轴与非测量范围",
       "passed": true
     },
     {
@@ -93,7 +101,7 @@
       "passed": true
     },
     {
-      "name": "正文全部展开/收起及深链定位",
+      "name": "结束索引与图库移除，页尾只保留原仓库入口",
       "passed": true
     },
     {

@@ -1,6 +1,6 @@
 /*
- * [INPUT]: 原文、八图、记录对话框与页面结尾的DOM。
- * [OUTPUT]: 完整资料阅读、表格、原图查看与对话框样式。
+ * [INPUT]: 章节原文、原图/记录对话框与单链接页尾的DOM。
+ * [OUTPUT]: 资料阅读、表格、原图查看、对话框与简洁页尾样式。
  * [POS]: dist来源阅读层；不改变原稿内容，窄屏阅读规则位于responsive.css。
  * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
  */
@@ -184,7 +184,7 @@
 .site-footer {
   border-top:1px solid var(--line); max-width:var(--max); margin:auto;
   padding:32px 0 45px; display:flex; align-items:center;
-  justify-content:space-between; gap:25px;
+  justify-content:flex-end; gap:25px;
 }
 .site-footer .brand {
   font-size:12px;

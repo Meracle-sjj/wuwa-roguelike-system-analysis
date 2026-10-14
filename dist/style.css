@@ -1,11 +1,18 @@
 /*
- * [INPUT]: 主页面论点、选择结果、节奏容器与验收证据结构。
- * [OUTPUT]: 论点收束、选择结果、节奏容器与验收证据的局部样式。
+ * [INPUT]: 主页面关键论点、测试目的、选择结果、节奏与验收证据结构。
+ * [OUTPUT]: 金色下划线强调、测试说明、论点收束及原文按钮的局部样式。
  * [POS]: dist局部组件主题；颜色来自theme.css，断点由responsive.css统一维护。
  * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
  */
 .motion-toggle {margin-left:auto;white-space:nowrap;padding:4px 11px;border:1px solid var(--line);font-size:10px;color:var(--gold);line-height:1.8;}
 .motion-toggle:hover,.motion-toggle[aria-pressed=true] {border-color:var(--gold);background:#d9b77d0a;}
+.key-statement {
+  color:var(--text); font-weight:700;
+  text-decoration:underline; text-decoration-color:var(--gold);
+  text-decoration-thickness:2px; text-underline-offset:.3em; text-decoration-skip-ink:auto;
+}
+.build-test-strategy {color:var(--muted);line-height:var(--type-body-line);max-width:48em;}
+button.chapter-source {display:block;width:100%;text-align:left;}
 .argument-close {display:grid;grid-template-columns:140px 1fr;gap:30px;margin:35px 0 0;padding-top:24px;border-top:1px solid var(--line);}
 .argument-close>span {font-size:10px;line-height:1.9;color:var(--gold);}
 .argument-close p {font-size:13px;color:var(--muted);line-height:1.95;margin:0;}
