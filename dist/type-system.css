@@ -1,0 +1,292 @@
+/*
+ * [INPUT]: 既有主题、章节与舞台组件的语义类名，typography-guide.md 的排版角色契约。
+ * [OUTPUT]: 面向公开阅读的统一字号、行高、字距与中文行长，不更改机制或动画状态。
+ * [POS]: dist 最后加载的排版层；阅读文字采用无衬线，游戏卡面字体仍由 selection.css 管理。
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
+:root {
+  --type-hero:clamp(2.625rem,4.8vw,4.25rem);
+  --type-chapter:clamp(2rem,3.2vw,2.75rem);
+  --type-stage:clamp(1.5rem,2vw,1.75rem);
+  --type-subtitle:clamp(1.25rem,1.5vw,1.375rem);
+  --type-body:clamp(1rem,.96rem + .18vw,1.125rem);
+  --type-lead:clamp(1.125rem,1.02rem + .25vw,1.25rem);
+  --type-quote:clamp(1.375rem,1.07rem + .85vw,1.875rem);
+  --type-overline:clamp(.875rem,.83rem + .08vw,.9375rem);
+  --type-caption:.875rem;
+  --type-interface:.9375rem;
+  --type-heading-line:1.35;
+  --type-body-line:1.8;
+  --type-caption-line:1.65;
+}
+
+/* --- 角色：全页标题、章节标题、舞台标题、局部论点。 --- */
+body { font-size:var(--type-body); line-height:var(--type-body-line); }
+.hero h1 {
+  font-size:var(--type-hero); line-height:1.22; letter-spacing:-.025em;
+}
+.chapter-heading h2,.archive-heading h2 {
+  font-size:var(--type-chapter); line-height:var(--type-heading-line);
+  letter-spacing:-.018em; font-weight:600;
+}
+.chapter-number { font-size:clamp(3.25rem,4.6vw,4rem); min-width:1.15em; }
+.rhythm-summary-title h3,.feedback-scene-heading h4,.boxing-heading h4,
+.choice-insight h3,.evidence-heading h3,.gallery-heading h3,
+.hierarchy-dream-header h3 {
+  font-size:var(--type-stage); line-height:1.4; letter-spacing:-.012em;
+  font-weight:600;
+}
+.loop-line h3,.argument-pair h3,.validation-line h3,
+.rhythm-implications h4,.record-button h4 {
+  font-size:var(--type-subtitle); line-height:1.45; font-weight:600;
+}
+.argument-close>span,.argument-pair>div>span,
+.hierarchy-thesis>span,.hierarchy-arguments>div>span,
+.hierarchy-shield-explanation>span,.build-result>span,
+.metaphor-links>div>span,.choice-insight dt,.resource-list dt {
+  font-size:var(--type-subtitle); line-height:1.5;
+  font-weight:500; letter-spacing:0;
+}
+.hierarchy-thesis>p {
+  font-size:var(--type-quote); line-height:1.6; letter-spacing:-.015em;
+}
+.build-result strong { font-size:var(--type-subtitle); line-height:1.6; }
+.study-thesis { font-size:var(--type-stage); line-height:1.5; letter-spacing:0; }
+
+/* --- 角色：正文与引导段。颜色不决定字号。 --- */
+.chapter-lead,.hero-deck {
+  font-size:var(--type-lead); line-height:1.8; max-width:42em;
+}
+.loop-line p,.resource-list dd,.argument-close p,.argument-pair p,
+.build-result p,.choice-insight p,.choice-insight dd,.metaphor-links p,
+.rhythm-afterword>p,.validation-line p,.record-button p,
+.hierarchy-shield-explanation p,.hierarchy-baseline p,.hierarchy-arguments p,
+.rhythm-case-summary>p,.rhythm-stage-reading p,.rhythm-implications p,
+.feedback-scene-heading p,.feedback-scene-caption p {
+  font-size:var(--type-body); line-height:var(--type-body-line);
+}
+.argument-close { grid-template-columns:minmax(160px,190px) minmax(0,1fr); }
+.argument-pair>div,.choice-insight>div,.metaphor-links>div { min-width:0; }
+.resource-list>div { grid-template-columns:6.5em minmax(0,1fr); gap:18px; }
+.hierarchy-shield-explanation { grid-template-columns:12em minmax(0,1fr); }
+.hierarchy-thesis { align-items:baseline; gap:30px; }
+.hierarchy-thesis>span { white-space:nowrap; }
+.hierarchy-arguments { gap:28px; }
+.evidence-heading { align-items:flex-start; }
+.evidence-heading p { max-width:29em; }
+
+/* --- 角色：章眉可辨读，来源与图例保持次要层级。 --- */
+.eyebrow,.chapter-heading .eyebrow,.choice-insight .eyebrow,
+.dialog-top .eyebrow,.rhythm-eyebrow,.rhythm-card-kicker {
+  font-family:var(--sans); font-size:var(--type-overline); line-height:1.5;
+  font-weight:600; letter-spacing:.14em;
+}
+.chapter-heading .eyebrow { margin-bottom:14px; }
+.choice-insight .eyebrow { letter-spacing:.06em; }
+.brand small { font-size:.75rem; letter-spacing:.13em; line-height:1.4; }
+.brand,.site-footer .brand { font-size:1rem; }
+.edition,.hero-meta,.study-topline,.mini-compare span,.mini-caption,
+.study-link,.study-stats span,.study-stats p,.margin-note,.tag,.quiet-note,
+.expand-label,figcaption,.boundary-note,.evidence-heading p,
+.archive-heading p:last-child,.gallery-heading p,.gallery-item p,
+.source-foot p,.source-foot a,.site-footer>span,
+.figure-dialog>p,.figure-dialog>a,.document-dialog .source-document-link,
+.hierarchy-column-head,.hierarchy-category p,.hierarchy-badge-shared small,
+.hierarchy-color-key>span,.hierarchy-scope,.hierarchy-dream-header span,
+.hierarchy-dream-header>p,.hierarchy-baseline-scope,
+.rhythm-case small,.rhythm-qualitative,.rhythm-chart-legend,
+.rhythm-graph-caption,.rhythm-rule-boundary p,.rhythm-evidence,
+.feedback-scene-boundary {
+  font-size:var(--type-caption); line-height:var(--type-caption-line);
+}
+.study-topline { letter-spacing:.07em; }
+.hero-meta { letter-spacing:.025em; }
+.margin-note { line-height:1.8; }
+.tag { letter-spacing:.025em; }
+.quiet-note,.boundary-note { max-width:72em; }
+.mini-caption { text-align:left; }
+.study-link { line-height:1.7; }
+.study-stats b { font-size:2.25rem; }
+.study-stats>div { align-items:center; }
+.mini-compare>div { grid-template-columns:4.5em minmax(0,1fr); gap:14px; }
+.source-foot p { max-width:58%; }
+.gallery-item p { align-items:flex-start; }
+.gallery-item p span:first-child { font-size:1rem; line-height:1.5; }
+.figure-dialog>p { line-height:1.8; }
+.dialog-top h2 { font-size:var(--type-stage); line-height:1.4; }
+
+/* --- 角色：操作文字，不让可用性依赖小号标签。 --- */
+.text-link,.section-links .text-link,.chapter-source,
+.mast-actions .text-link,.site-footer .text-link,.button,
+.archive-heading>.button,.motion-toggle,.chapter-nav a {
+  font-size:var(--type-interface); line-height:1.6;
+}
+.chapter-nav { gap:18px; }
+.button,.motion-toggle { min-height:44px; }
+.motion-toggle { padding:7px 12px; }
+.reading-details summary { grid-template-columns:60px minmax(0,1fr) 70px; }
+.reading-details summary strong { font-size:var(--type-subtitle); line-height:1.5; }
+.reading-details summary>span:first-child,.summary-action {
+  font-size:var(--type-caption); line-height:1.5;
+}
+.reading-details[open] .summary-action::after { font-size:var(--type-caption); }
+.record-id { font-size:2rem; }
+
+/* --- 角色：全文与表格，中文正文保留稳定行长。 --- */
+.prose,.document-dialog .prose {
+  font-size:var(--type-body); line-height:1.85; max-width:48rem;
+}
+.prose h1,.prose h2 { font-size:var(--type-stage); line-height:1.45; }
+.prose h3 { font-size:var(--type-subtitle); line-height:1.5; }
+.prose h4 { font-size:1.125rem; line-height:1.5; }
+.prose em { font-size:var(--type-caption); line-height:1.8; }
+.prose table { font-size:.9375rem; line-height:1.7; }
+.prose th,.prose td { padding:12px 14px; }
+.prose blockquote { font-size:var(--type-body); line-height:1.8; }
+.prose code { font-size:.875rem; line-height:1.65; }
+
+/* --- 来源图：角色名称是图内正文，图例是图注，SVG使用自身坐标单位。 --- */
+.hierarchy-column-head { letter-spacing:.025em; }
+.hierarchy-board { grid-template-rows:repeat(13,minmax(2.875rem,max-content)); }
+.hierarchy-category h3 { font-size:1.25rem; line-height:1.4; }
+.hierarchy-category p { line-height:1.6; }
+.hierarchy-source { font-size:1rem; line-height:1.4; }
+.hierarchy-badge strong { font-size:1.125rem; line-height:1.4; }
+.hierarchy-badge-shared small { font-size:.8125rem; }
+.hierarchy-baseline-title h4 { font-size:1.125rem; line-height:1.5; }
+.hierarchy-baseline text { font-size:15px; }
+.hierarchy-color-key { gap:18px 30px; }
+.hierarchy-color-key b { font-size:1rem; }
+.hierarchy-dream-header>p { white-space:normal; }
+
+/* --- 节奏与反馈：舞台标题高于正文；动态解释保持与主文同一尺度。 --- */
+.rhythm-case b { font-size:1.125rem; line-height:1.5; letter-spacing:0; }
+.rhythm-case small { margin-top:5px; }
+.rhythm-rule { font-size:1rem; line-height:1.65; }
+.rhythm-qualitative { letter-spacing:0; }
+.rhythm-chart-heading h4 { font-size:1.125rem; line-height:1.5; }
+.rhythm-plot text,.rhythm-plot .rhythm-phase-label { font-size:22px; }
+.rhythm-plot .rhythm-axis-label[transform] { font-size:18px; }
+.rhythm-phase-list { font-size:var(--type-caption); line-height:1.6; }
+.rhythm-stage-tag { font-size:1.125rem; line-height:1.6; }
+.rhythm-stage-reading { grid-template-columns:minmax(145px,190px) minmax(0,1fr); }
+.rhythm-stage-reading p { min-height:4em; }
+.feedback-scene-heading>span { font-size:var(--type-overline); line-height:1.6; }
+.feedback-scene-phase { font-size:1rem; line-height:1.65; letter-spacing:0; }
+.feedback-scene-caption { min-height:145px; }
+.feedback-scene-steps li { font-size:var(--type-caption); line-height:1.6; }
+.feedback-stage-kicker { font-size:21px; letter-spacing:.03em; }
+.feedback-stage-label { font-size:23px; letter-spacing:0; }
+.feedback-actor-name { font-size:20px; letter-spacing:.05em; }
+
+/* --- 选择：仅统一图外文字，游戏卡面字体与尺度由 selection.css 负责。 --- */
+.selection-kicker { font-size:var(--type-overline); line-height:1.5; letter-spacing:.08em; }
+.selection-demo-label,.selection-legend>span,.selection-boundary,
+.selection-build-support em,.selection-text-equivalent {
+  font-size:var(--type-caption); line-height:1.7;
+}
+.selection-status { font-size:1.125rem; line-height:1.6; }
+.selection-reason { font-size:1rem; line-height:1.6; }
+.selection-build-support small { font-size:var(--type-overline); line-height:1.5; }
+.selection-build-support b { font-size:1.125rem; line-height:1.5; }
+.selection-build-support>span { padding:23px; }
+.selection-build-support>span+span::before { top:50px; }
+.selection-caption { gap:8px 18px; }
+
+/* --- 容器跟随字级变化，移动端正文保持16px，仍保留来源图层级。 --- */
+@media(max-width:1000px) {
+  .hero { gap:35px; }
+  .hero-study { padding:25px; }
+  .lead-row { gap:36px; }
+  .chapter-heading { gap:24px; }
+  .rhythm-plot text,.rhythm-plot .rhythm-phase-label { font-size:18px; }
+  .rhythm-plot .rhythm-axis-label[transform] { font-size:15px; }
+  .evidence-heading { flex-wrap:wrap; }
+  .evidence-heading p { max-width:none; }
+}
+@media(max-width:760px) {
+  .hierarchy-thesis { display:block; }
+  .hierarchy-thesis>span { display:block; margin-bottom:12px; }
+  .hierarchy-column-head { font-size:var(--type-caption); }
+  .hierarchy-board {
+    grid-template-rows:minmax(4.125rem,max-content) repeat(5,minmax(2.875rem,max-content)) minmax(4.125rem,max-content) repeat(2,minmax(2.875rem,max-content)) minmax(4.125rem,max-content) repeat(4,minmax(2.875rem,max-content)) minmax(4.125rem,max-content) repeat(2,minmax(2.875rem,max-content));
+  }
+  .hierarchy-category { grid-template-columns:16px minmax(0,1fr); column-gap:5px; padding-left:0; padding-right:0; }
+  .hierarchy-category>span { font-size:.875rem; }
+  .hierarchy-category h3 { font-size:1.125rem; line-height:1.35; }
+  .hierarchy-category p { font-size:.875rem; line-height:1.4; margin-top:3px; }
+  .hierarchy-source { font-size:.9375rem; padding:5px 6px; line-height:1.4; }
+  .hierarchy-badge strong { font-size:1rem; letter-spacing:.02em; }
+  .hierarchy-badge-shared small { font-size:.8125rem; }
+  .hierarchy-color-key { gap:12px; }
+  .hierarchy-baseline text { font-size:20px; }
+  .hierarchy-shield-explanation { display:block; }
+}
+@media(max-width:720px) {
+  :root { --type-body:1rem; --type-overline:.875rem; }
+  .masthead { height:auto; min-height:92px; gap:14px; padding:18px 0; }
+  .brand { font-size:.9375rem; }
+  .brand small { font-size:.6875rem; letter-spacing:.075em; }
+  .mast-actions .text-link { font-size:var(--type-caption); white-space:nowrap; }
+  .hero h1 { font-size:clamp(2.25rem,9.5vw,3.5rem); }
+  .hero-deck { font-size:1.125rem; line-height:1.8; }
+  .hero-study { display:block; padding:24px; }
+  .study-thesis { margin:0 0 25px; }
+  .mini-compare>div { grid-template-columns:4.5em minmax(0,1fr); gap:16px; }
+  .mini-compare svg { height:48px; }
+  .mini-caption { margin:12px 0 18px; }
+  .study-link { margin-top:0; }
+  .study-stats { gap:24px 16px; }
+  .study-stats>div { gap:10px; }
+  .study-stats b { font-size:2rem; }
+  .study-stats span { font-size:var(--type-caption); }
+  .chapter-nav { padding-top:12px; padding-bottom:12px; gap:22px; }
+  .chapter-nav a,.motion-toggle { font-size:var(--type-interface); }
+  .chapter-nav span { margin-right:6px; }
+  .chapter-heading { gap:18px; }
+  .chapter-number { font-size:2.75rem; min-width:1.1em; }
+  .chapter-heading h2 { font-size:clamp(1.875rem,5.8vw,2.25rem); line-height:1.4; }
+  .chapter-heading .eyebrow { font-size:var(--type-overline); letter-spacing:.09em; }
+  .chapter-lead { font-size:1.125rem; line-height:1.8; }
+  .argument-close { grid-template-columns:1fr; gap:14px; }
+  .argument-close>span,.argument-pair>div>span { font-size:var(--type-subtitle); }
+  .resource-list>div { grid-template-columns:6.5em minmax(0,1fr); }
+  .build-result { padding:22px; }
+  .section-links { gap:15px 22px; }
+  .reading-details summary { grid-template-columns:2em minmax(0,1fr); gap:12px; }
+  .reading-details summary strong { font-size:1.125rem; }
+  .summary-action { grid-column:2; text-align:left; }
+  .prose,.document-dialog .prose { font-size:1rem; line-height:1.85; padding-left:0; padding-right:0; }
+  .source-foot p { max-width:100%; }
+  .archive-heading h2 { font-size:var(--type-stage); }
+  .gallery-item p { font-size:var(--type-caption); }
+  .site-footer .brand { font-size:.9375rem; }
+  .rhythm-stage-reading { grid-template-columns:1fr; }
+  .rhythm-stage-reading p { min-height:0; }
+}
+@media(max-width:620px) {
+  .rhythm-case b,.rhythm-chart-heading h4 { font-size:1.125rem; }
+  .rhythm-plot text,.rhythm-plot .rhythm-axis-label,
+  .rhythm-plot .rhythm-phase-label { font-size:28px; }
+  .rhythm-plot .rhythm-axis-label[y="264"] { font-size:24px; }
+  .feedback-scene-caption { min-height:0; padding-top:20px; padding-bottom:8px; }
+  .feedback-scene-heading { padding:24px 20px 12px; }
+  .feedback-scene-caption,.feedback-scene-steps { margin-left:20px; margin-right:20px; }
+  .feedback-scene-steps { gap:8px; }
+  .feedback-scene-boundary { padding:20px; }
+  .feedback-stage-kicker { font-size:27px; }
+  .feedback-stage-label { font-size:29px; }
+  .feedback-actor-name { font-size:26px; }
+  .selection-heading { flex-wrap:wrap; }
+  .selection-build-support>span { padding:20px 18px; }
+  .selection-build-support>span+span::before { top:48px; }
+}
+@media(max-width:380px) {
+  .hierarchy-category h3 { font-size:1rem; }
+  .hierarchy-baseline text { font-size:25px; }
+}
+@media print {
+  .hero h1 { font-size:2.5rem; }
+  .chapter-heading h2 { font-size:1.75rem; }
+  .chapter-lead,.prose { font-size:1rem; }
+}

@@ -1,0 +1,123 @@
+/*
+ * [INPUT]: 主页面论点、选择结果、节奏容器与验收证据结构。
+ * [OUTPUT]: 论点收束、选择结果、节奏容器与验收证据的局部样式。
+ * [POS]: dist局部组件主题；颜色来自theme.css，断点由responsive.css统一维护。
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
+.motion-toggle {margin-left:auto;white-space:nowrap;padding:4px 11px;border:1px solid var(--line);font-size:10px;color:var(--gold);line-height:1.8;}
+.motion-toggle:hover,.motion-toggle[aria-pressed=true] {border-color:var(--gold);background:#d9b77d0a;}
+.argument-close {display:grid;grid-template-columns:140px 1fr;gap:30px;margin:35px 0 0;padding-top:24px;border-top:1px solid var(--line);}
+.argument-close>span {font-size:10px;line-height:1.9;color:var(--gold);}
+.argument-close p {font-size:13px;color:var(--muted);line-height:1.95;margin:0;}
+.argument-pair {display:grid;grid-template-columns:1fr 1fr;gap:55px;margin-top:36px;}
+.argument-pair>div {border-top:1px solid #d9b77d40;padding-top:21px;}
+.argument-pair span {font-size:10px;color:var(--gold);}
+.argument-pair h3 {font-size:19px;line-height:1.6;margin:10px 0 14px;}
+.argument-pair p {font-size:13px;line-height:1.95;color:var(--muted);margin:0;}
+.build-result {border-left:2px solid var(--gold);padding:21px 25px;margin:27px 0 0;background:#d9b77d04;}
+.build-result>span {display:block;color:var(--gold);font-size:10px;margin-bottom:9px;}
+.build-result strong {font-size:17px;line-height:1.6;font-weight:500;}
+.build-result i {font-style:normal;color:var(--gold);padding:0 8px;}
+.build-result p {font-size:12px;line-height:1.95;color:var(--muted);margin:13px 0 0;}
+.build-result b {color:var(--gold);font-weight:400;margin-right:4px;}
+.choice-insight {display:grid;grid-template-columns:1.2fr 1fr;gap:65px;margin:38px 0 30px;}
+.choice-insight .eyebrow {font-size:9px;letter-spacing:.08em;margin-bottom:12px;}
+.choice-insight h3 {font-size:26px;line-height:1.5;margin-bottom:16px;}
+.choice-insight p {font-size:13px;color:var(--muted);line-height:1.9;margin:0;}
+.choice-insight dl {margin:0;}
+.choice-insight dl>div {padding:16px 0;border-bottom:1px solid var(--line);}
+.choice-insight dl>div:first-child {padding-top:0;}
+.choice-insight dt {font-size:12px;color:var(--gold);}
+.choice-insight dd {font-size:12px;line-height:1.9;color:var(--muted);margin:8px 0 0;}
+.metaphor-links {display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:28px;margin:30px 0;border-top:1px solid var(--line);padding-top:25px;}
+.metaphor-links>div+div {border-left:1px solid var(--line);padding-left:28px;}
+.metaphor-links span {font-size:10px;color:var(--gold);}
+.metaphor-links p {font-size:12px;line-height:1.9;color:var(--muted);margin:12px 0 0;}
+.metaphor-links b {color:var(--text);font-weight:400;}
+.section-links {
+  display:flex; gap:28px; align-items:center;
+  flex-wrap:wrap; margin-top:23px;
+}
+.section-links .text-link {
+  font-size:11px;
+}
+.boundary-note {
+  font-size:11px; color:var(--muted); border-left:1px solid #796849;
+  padding:0 0 0 14px; margin:24px 0; line-height:1.9;
+}
+.chapter-feature {
+  position:relative;
+}
+.chapter-feature::before {
+  content:""; position:absolute; left:-35px;
+  right:-35px; top:65px; bottom:60px;
+  border:1px solid #d9b77d20; pointer-events:none; z-index:-1;
+  background:radial-gradient(ellipse at top,#4c3d1313,transparent 65%);
+}
+.rhythm-afterword {
+  display:grid; grid-template-columns:1.7fr 1fr; gap:45px;
+  margin-top:26px; align-items:start;
+}
+.rhythm-afterword>p {
+  font-size:12px; color:var(--muted); line-height:1.9;
+  margin:0;
+}
+.rhythm-afterword .tag {
+  margin-right:8px;
+}
+.rhythm-afterword .section-links {
+  margin:0; justify-content:flex-end; gap:20px;
+}
+.validation-line {
+  display:grid; grid-template-columns:repeat(4,1fr); list-style:none;
+  gap:25px; padding:0; margin:40px 0 65px;
+}
+.validation-line li {
+  padding-top:19px; border-top:1px solid #716040;
+}
+.validation-line span {
+  font-family:var(--serif); font-size:25px; color:var(--gold);
+}
+.validation-line h3 {
+  font-size:16px; margin:18px 0 10px;
+}
+.validation-line p {
+  font-size:12px; color:var(--muted); margin:0;
+  line-height:1.9;
+}
+.evidence-heading {
+  display:flex; justify-content:space-between; gap:20px;
+  align-items:baseline; margin-bottom:14px;
+}
+.evidence-heading h3 {
+  font-size:22px; margin:0;
+}
+.evidence-heading p {
+  font-size:11px; color:var(--muted); margin:0;
+}
+.record-list {
+  display:grid; grid-template-columns:1fr 1fr; gap:1px;
+  background:var(--line); border:1px solid var(--line);
+}
+.record-button {
+  background:var(--bg); padding:22px 24px; display:flex;
+  text-align:left; gap:20px;
+}
+.record-button:hover {
+  background:#131619;
+}
+.record-id {
+  font-family:var(--serif); font-size:31px; color:var(--gold);
+  line-height:1.3;
+}
+.record-button h4 {
+  margin:3px 0 7px; font-size:14px; font-weight:500;
+}
+.record-button p {
+  font-size:11px; color:var(--muted); line-height:1.85;
+  margin:0;
+}
+.record-button .record-arrow {
+  color:var(--gold); font-size:16px; margin-left:auto;
+  align-self:center;
+}

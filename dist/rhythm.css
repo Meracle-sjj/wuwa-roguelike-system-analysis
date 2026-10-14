@@ -1,0 +1,105 @@
+/*
+ * [INPUT]: 依赖页面黑金/青玉颜色变量与 rhythm.js 的独立 DOM 结构。
+ * [OUTPUT]: 提供双图对照、示意进程、键盘焦点和低动态偏好的组件样式。
+ * [POS]: dist 的局部视觉层，所有选择器以 rhythm- 限域，不改其它内容排版。
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
+.rhythm-root { color: var(--text, #f5f0e7); font-family: inherit; }
+.rhythm-root * { box-sizing: border-box; }
+.rhythm-workbench { background: linear-gradient(130deg, rgba(217,183,125,.055), transparent 40%), var(--panel, #121518); border: 1px solid var(--line, #34302a); padding: clamp(18px, 3vw, 34px); }
+.rhythm-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 27px; }
+.rhythm-case { appearance: none; color: var(--muted, #a7a39a); background: rgba(0,0,0,.17); border: 1px solid var(--line, #34302a); min-height: 89px; padding: 15px 18px; display: flex; align-items: center; gap: 15px; cursor: pointer; text-align: left; font: inherit; transition: background .2s, border-color .2s; }
+.rhythm-case.is-active { border-color: var(--gold, #d9b77d); color: var(--text, #f5f0e7); background: rgba(217,183,125,.065); box-shadow: inset 0 -2px var(--gold, #d9b77d); }
+.rhythm-case:hover { background: rgba(217,183,125,.08); }
+.rhythm-case-index { font: 30px Georgia, serif; color: var(--gold, #d9b77d); }
+.rhythm-case b { display: block; font-weight: 600; font-size: 16px; letter-spacing: .03em; }
+.rhythm-case small { display: block; color: var(--muted, #a7a39a); font-size: 12px; margin-top: 6px; line-height: 1.5; }
+.rhythm-case-arrow { margin-left: auto; color: var(--gold, #d9b77d); font-size: 25px; font-weight: 300; }
+.rhythm-eyebrow, .rhythm-card-kicker { font: 10px/1.4 Arial, sans-serif; letter-spacing: .18em; color: var(--gold, #d9b77d); }
+.rhythm-summary-title h3 { font-size: clamp(20px, 2.4vw, 28px); font-weight: 550; letter-spacing: .015em; line-height: 1.5; margin: 9px 0 15px; }
+.rhythm-case-summary > p { max-width: 860px; color: var(--muted, #a7a39a); font-size: 14px; line-height: 1.95; margin: 0 0 18px; }
+.rhythm-rule { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 13px; color: var(--gold, #d9b77d); padding: 14px 0 23px; }
+.rhythm-rule strong { font-weight: 550; }
+.rhythm-rule > span:first-child { font-size: 20px; }
+.rhythm-qualitative { margin-left: auto; color: var(--muted, #a7a39a); font-size: 11px; letter-spacing: .025em; }
+.rhythm-charts { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 16px; }
+.rhythm-chart-card { border: 1px solid var(--line, #34302a); background: rgba(0,0,0,.2); padding: 16px 12px 14px; min-width: 0; }
+.rhythm-chart-heading { display: flex; align-items: center; gap: 11px; padding: 0 8px 9px; }
+.rhythm-letter { font: 30px/1 Georgia, serif; color: var(--gold, #d9b77d); }
+.rhythm-chart-heading h4 { margin: 0; font-size: 13px; line-height: 1.5; font-weight: 500; }
+.rhythm-plot { width: 100%; height: auto; overflow: visible; display: block; }
+.rhythm-plot text { font-family: inherit; fill: var(--muted, #a7a39a); font-size: 16px; }
+.rhythm-plot .rhythm-phase-label { font-size: 16px; fill: var(--text, #f5f0e7); }
+.rhythm-grid { fill: none; stroke: var(--line, #34302a); stroke-width: .5; stroke-dasharray: 2 6; opacity: .9; }
+.rhythm-axis { fill: none; stroke: var(--gold, #d9b77d); stroke-width: .9; opacity: .7; }
+.rhythm-band { fill: var(--jade, #79c9b6); opacity: .07; }
+.rhythm-band-gold { fill: var(--gold, #d9b77d); opacity: .1; }
+.rhythm-boundary { fill: none; stroke: var(--gold, #d9b77d); stroke-width: .7; stroke-dasharray: 4 5; opacity: .45; }
+.rhythm-curve, .rhythm-future, .rhythm-reference { fill: none; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.rhythm-reference { stroke: var(--text, #f5f0e7); stroke-width: 1; stroke-dasharray: 4 6; opacity: .38; }
+.rhythm-future { stroke: var(--text, #f5f0e7); opacity: .4; stroke-width: 1.4; }
+.rhythm-future.rhythm-gold { opacity: .55; }
+.rhythm-curve { stroke: var(--text, #f5f0e7); stroke-width: 2.1; }
+.rhythm-gold { stroke: var(--gold, #d9b77d); }
+.rhythm-marker { stroke: var(--jade, #79c9b6); opacity: .5; stroke-width: .8; }
+.rhythm-dot { fill: var(--text, #f5f0e7); stroke: var(--bg, #090c0f); stroke-width: 2; }
+.rhythm-dot-gold { fill: var(--gold, #d9b77d); }
+.rhythm-chart-legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; color: var(--muted, #a7a39a); font-size: 11px; line-height: 1.6; }
+.rhythm-chart-legend > span { display: inline-flex; align-items: center; gap: 7px; }
+.rhythm-key { display: inline-block; width: 19px; height: 0; border-top: 2px solid var(--text, #f5f0e7); }
+.rhythm-key-gold { border-color: var(--gold, #d9b77d); }
+.rhythm-key-dashed { border-top: 1px dashed var(--muted, #a7a39a); }
+.rhythm-key-band { height: 9px; border: 0; background: rgba(121,201,182,.2); }
+.rhythm-graph-caption { font-size: 12px; line-height: 1.9; color: var(--muted, #a7a39a); margin: 15px 2px 22px; }
+.rhythm-console { border-top: 1px solid var(--line, #34302a); border-bottom: 1px solid var(--line, #34302a); padding: 19px 0 22px; }
+.rhythm-progress-track {height:2px;background:var(--line);margin:18px 0 13px;}
+.rhythm-progress-track i {display:block;height:100%;width:0;background:var(--gold);box-shadow:0 0 14px #d9b77d30;}
+.rhythm-phase-list {display:flex;justify-content:space-between;gap:10px;margin:0;padding:0;list-style:none;font-size:10px;color:var(--muted);}
+.rhythm-phase-list .is-current {color:var(--jade);}
+.rhythm-stage-reading { display: grid; grid-template-columns: minmax(110px, 190px) minmax(0,1fr); align-items: start; gap: 20px; margin-top: 18px; }
+.rhythm-stage-tag { font-size: 12px; color: var(--jade, #79c9b6); border-left: 2px solid var(--jade, #79c9b6); padding-left: 10px; line-height: 1.8; }
+.rhythm-stage-reading p { font-size: 13px; line-height: 1.9; color: var(--muted, #a7a39a); margin: 0; min-height: 50px; }
+.rhythm-implications { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 26px 0 22px; }
+.rhythm-implications article + article { border-left: 1px solid var(--line, #34302a); padding-left: 28px; }
+.rhythm-implications h4 { font-size: 16px; font-weight: 500; margin: 8px 0 10px; }
+.rhythm-implications p { color: var(--muted, #a7a39a); font-size: 13px; line-height: 1.9; margin: 0; }
+.rhythm-rule-boundary { display: flex; align-items: flex-start; gap: 12px; background: rgba(232,137,127,.045); border: 1px solid rgba(232,137,127,.18); padding: 13px 15px; }
+.rhythm-boundary-icon { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 18px; border: 1px solid var(--danger, #e8897f); border-radius: 50%; font: 12px Georgia, serif; color: var(--danger, #e8897f); margin-top: 3px; }
+.rhythm-rule-boundary p { font-size: 12px; line-height: 1.9; margin: 0; color: var(--muted, #a7a39a); }
+.rhythm-evidence { display: flex; flex-wrap: wrap; gap: 9px 18px; justify-content: space-between; margin-top: 17px; font-size: 10px; line-height: 1.8; color: var(--muted, #a7a39a); }
+.rhythm-evidence a { color: var(--gold, #d9b77d); text-underline-offset: 4px; }
+.rhythm-root button:focus-visible, .rhythm-root a:focus-visible { outline: 2px solid var(--jade, #79c9b6); outline-offset: 5px; }
+@media (max-width: 1000px) {
+  .rhythm-charts { grid-template-columns: 1fr; }
+  .rhythm-chart-card { padding: 20px 17px 17px; }
+  .rhythm-chart-heading h4 { font-size: 14px; }
+  .rhythm-plot text { font-size: 17px; }
+}
+@media (max-width: 620px) {
+  .rhythm-selector { grid-template-columns: 1fr; gap: 9px; margin-bottom: 23px; }
+  .rhythm-case { min-height: 75px; padding: 12px 14px; }
+  .rhythm-chart-card { padding: 13px 5px 14px; }
+  .rhythm-chart-heading { gap: 8px; padding-left: 6px; }
+  .rhythm-chart-heading h4 { font-size: 12px; }
+  .rhythm-letter { font-size: 26px; }
+  /* --- SVG按视口缩放；手机放大短标签，长纵轴交给图外解释与无障碍描述。 --- */
+  .rhythm-plot .rhythm-axis-label { font-size: 24px; }
+  .rhythm-plot .rhythm-phase-label { font-size: 22px; }
+  .rhythm-plot .rhythm-axis-label[transform] { visibility: hidden; }
+  .rhythm-plot .rhythm-axis-label[y="264"] { font-size: 20px; }
+  .rhythm-qualitative { width: 100%; margin-left: 30px; }
+  .rhythm-stage-reading { grid-template-columns: 1fr; gap: 10px; }
+  .rhythm-stage-reading p { min-height: 0; }
+  .rhythm-implications { grid-template-columns: 1fr; gap: 20px; }
+  .rhythm-implications article + article { border-left: 0; border-top: 1px solid var(--line, #34302a); padding: 20px 0 0; }
+  .rhythm-evidence { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rhythm-root *, .rhythm-root *::before, .rhythm-root *::after { transition: none !important; animation: none !important; }
+}
+@media print {
+  .rhythm-progress-track, .rhythm-phase-list { display: none; }
+  .rhythm-future { opacity: 1; }
+  .rhythm-marker, .rhythm-dot { display: none; }
+  .rhythm-charts { break-inside: avoid; }
+}

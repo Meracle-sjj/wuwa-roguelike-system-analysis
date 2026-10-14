@@ -1,0 +1,13 @@
+/*
+ * [INPUT]: 本地case-relic.woff2与OFL版权；只加载已经记录来源的卡面用字子集。
+ * [OUTPUT]: Case Relic字体族，用于短游戏标签，缺字按调用方的serif字体回退。
+ * [POS]: fonts注册层；selection消费字体，正文与type-system的字阶不依赖它。
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
+@font-face {
+  font-family: 'Case Relic';
+  src: url('./case-relic.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}

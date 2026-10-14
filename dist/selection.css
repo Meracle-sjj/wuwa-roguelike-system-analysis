@@ -1,0 +1,77 @@
+/*
+ * [INPUT]: selection.js的三选一SVG、共享黑金主题令牌与本地Case Relic字体。
+ * [OUTPUT]: 推荐大拇指、游戏卡面文字、下沿旧卡和构筑支持的局部视觉。
+ * [POS]: dist第三章样式；selection-前缀限域，播放与暂停全部由CaseMotion控制。
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
+.selection-root { min-width:0; color:var(--text,#f5f0e7); }
+.selection-workbench { margin:0; border:1px solid var(--line,#34302a); background:linear-gradient(135deg,#d9b77d08,transparent 42%),var(--panel,#121518); }
+.selection-heading { display:flex; align-items:center; justify-content:space-between; gap:15px; padding:23px 28px 0; }
+.selection-kicker { color:var(--gold,#d9b77d); font:11px/1.5 Georgia,serif; letter-spacing:.15em; }
+.selection-demo-label { font-size:11px; color:var(--muted,#a7a39a); margin-left:auto; text-align:right; }
+.selection-stage { overflow:hidden; background:radial-gradient(ellipse at 50% 42%,#d9b77d08,transparent 65%); }
+.selection-scene { display:block; width:100%; height:auto; overflow:hidden; }
+.selection-scene text { font-family:var(--sans,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif); }
+.selection-guide { fill:none; stroke:#756346; stroke-width:1; opacity:.46; }
+.selection-axis { fill:none; stroke:var(--gold,#d9b77d); stroke-width:1.5; opacity:.65; }
+.selection-row-label { fill:#c8b897; font-size:17px; letter-spacing:2px; }
+.selection-card-surface { fill:#0c1015; }
+.selection-card-edge { fill:none; stroke:var(--selection-card-color); stroke-width:1.6; }
+.selection-card-line { fill:none; stroke:var(--selection-card-color); stroke-width:1.1; opacity:.65; }
+.selection-scene .selection-card-rarity { fill:var(--selection-card-color); font-family:'Case Relic',serif; font-size:34px; letter-spacing:1px; }
+.selection-card-symbol { fill:none; stroke:var(--selection-card-color); stroke-width:1.8; stroke-linejoin:round; stroke-linecap:round; }
+.selection-card-trace { fill:none; stroke:var(--selection-card-color); opacity:.24; }
+.selection-card-recommendation rect { fill:#e4c18316; stroke:var(--gold,#d9b77d); stroke-width:1.2; }
+.selection-card-recommendation text { font-family:'Case Relic',serif; font-size:22px; fill:var(--gold,#d9b77d); letter-spacing:1px; }
+.selection-thumb { fill:#e4c18333; stroke:var(--gold,#d9b77d); stroke-width:2; stroke-linejoin:round; }
+.selection-card[data-recommended=true] .selection-card-line { opacity:1; }
+.selection-card-check circle { fill:#0c1015; stroke:var(--selection-card-color); stroke-width:1.2; }
+.selection-card-check path { fill:none; stroke:var(--selection-card-color); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.selection-card-glow { fill:none; stroke:var(--selection-card-color); stroke-width:3; pointer-events:none; }
+.selection-card[data-selected=true] .selection-card-surface { fill:#151513; }
+.selection-card[data-rarity=advanced][data-selected=true] .selection-card-surface { fill:#181320; }
+.selection-caption { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:0 28px; padding:17px 0; border-top:1px solid var(--line,#34302a); }
+.selection-status { color:var(--gold,#d9b77d); font-size:15px; font-weight:500; }
+.selection-reason { font-size:12px; color:var(--muted,#a7a39a); margin-left:auto; }
+.selection-legend { display:flex; gap:22px; flex-wrap:wrap; padding:0 28px 14px; align-items:center; }
+.selection-legend>span { display:flex; align-items:center; gap:8px; font-size:11px; }
+.selection-legend i { display:block; width:7px; height:7px; transform:rotate(45deg); background:currentColor; }
+.selection-ordinary { color:#76b8e3; }
+.selection-advanced { color:#be94ec; }
+.selection-special { color:#e4c183; }
+.selection-recommended { color:var(--gold,#d9b77d); }
+.selection-recommended svg { width:20px; height:20px; fill:#e4c18322; stroke:currentColor; stroke-width:2; stroke-linejoin:round; }
+.selection-legend .selection-legend-rule { margin-left:auto; color:var(--muted,#a7a39a); }
+.selection-boundary { font-size:11px; color:var(--muted,#a7a39a); margin:0; padding:0 28px 21px; line-height:1.8; }
+.selection-build-support { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line,#34302a); background:#ffffff02; }
+.selection-build-support>span { display:flex; flex-direction:column; padding:21px 23px 22px; position:relative; }
+.selection-build-support>span+span { border-left:1px solid var(--line,#34302a); }
+.selection-build-support>span+span::before { content:'→'; position:absolute; top:42px; left:-8px; background:var(--panel,#121518); color:var(--gold,#d9b77d); font-size:15px; }
+.selection-build-support small { color:var(--gold,#d9b77d); font-size:10px; letter-spacing:.04em; }
+.selection-build-support b { font-size:16px; font-weight:500; margin:6px 0 3px; }
+.selection-build-support em { font-size:11px; font-style:normal; color:var(--muted,#a7a39a); }
+@media (max-width:700px) {
+  .selection-card-recommendation text {font-size:32px;letter-spacing:0;}
+  .selection-scene .selection-card-rarity {font-size:42px;letter-spacing:0;}
+  .selection-row-label {font-size:28px;letter-spacing:0;}
+  .selection-heading { padding:18px 17px 0; }
+  .selection-kicker { font-size:10px; }
+  .selection-demo-label { font-size:10px; }
+  .selection-caption { margin:0 17px; gap:4px; padding:14px 0; }
+  .selection-status { width:100%; font-size:13px; }
+  .selection-reason { margin-left:0; font-size:11px; }
+  .selection-legend { padding:0 17px 12px; gap:17px; }
+  .selection-legend .selection-legend-rule { margin-left:0; width:100%; }
+  .selection-boundary { padding:0 17px 17px; }
+  .selection-build-support { grid-template-columns:1fr 1fr; }
+  .selection-build-support>span { padding:17px 18px; }
+  .selection-build-support>span:nth-child(3) { border-left:0; border-top:1px solid var(--line,#34302a); }
+  .selection-build-support>span:nth-child(4) { border-top:1px solid var(--line,#34302a); }
+  .selection-build-support>span:nth-child(3)::before { content:none; }
+  .selection-build-support b { font-size:14px; }
+  .selection-build-support>span+span::before { top:34px; }
+}
+@media print {
+  .selection-workbench { break-inside:avoid; }
+  .selection-scene { max-height:380px; }
+}

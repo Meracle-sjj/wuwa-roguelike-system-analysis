@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "repo": "https://github.com/Meracle-sjj/wuwa-roguelike-system-analysis",
+  "commit": "fb160b19e5d5e19b306c9e3e8ea1f67ffd3458f2",
+  "sourceVersion": "v0.14",
+  "sourceDate": "2026-10-07",
+  "scope": "固定提交公开Markdown、ASR文本和PNG；没有录音、私有研究文件、Git对象或运行依赖。",
+  "transformations": [
+    "原件按字节复制；根CLAUDE.md保存为SOURCE-CLAUDE.md以容纳当前快照地图。",
+    "页面渲染转义原始HTML；禁止可执行协议；内部链接映射到本地sources或assets。",
+    "主稿六个二级章节逐字切分，不删段落；记录摘要只用于导航，不替代原文。"
+  ],
+  "files": [
+    {
+      "source": "CLAUDE.md",
+      "local": "SOURCE-CLAUDE.md",
+      "bytes": 1642,
+      "sha256": "8f4fbb6b05ef2c9f4a81871bfa0cad7b9625ca210cd8ebf4d0543be3667feb6e"
+    },
+    {
+      "source": "README.md",
+      "local": "README.md",
+      "bytes": 2390,
+      "sha256": "9b129631d7036f46ec3f4d99482a8b782876776146bcf0a4138503983fae2d38"
+    },
+    {
+      "source": "assets/01-mode-overview.png",
+      "local": "assets/01-mode-overview.png",
+      "bytes": 1926095,
+      "sha256": "8e261e945557284e5fc94206fa596b4f7b405d79d353ff639206eb9b3990bf45"
+    },
+    {
+      "source": "assets/02-weekly-position.png",
+      "local": "assets/02-weekly-position.png",
+      "bytes": 2243507,
+      "sha256": "53a0b1d97a44da88629f31bed4d1d024d0a80a06f838d7c346bfaeae6b73116b"
+    },
+    {
+      "source": "assets/03-sigil-design-sources.png",
+      "local": "assets/03-sigil-design-sources.png",
+      "bytes": 1743559,
+      "sha256": "6d026a5282a1a8dab83767acb35bf0dd9a236f946652c2d8a091440f61b6e4ab"
+    },
+    {
+      "source": "assets/04-baseline-rhythm.png",
+      "local": "assets/04-baseline-rhythm.png",
+      "bytes": 1579201,
+      "sha256": "89029f90c04bd27bff69d626ead1254308109fcccff52482a08b88a1bf1b2a51"
+    },
+    {
+      "source": "assets/05-rarity-selection.png",
+      "local": "assets/05-rarity-selection.png",
+      "bytes": 1686564,
+      "sha256": "7e76c7a91b117678230d05b1503af2d636255c3517ade5f795869c303fc744d0"
+    },
+    {
+      "source": "assets/06-metaphor-rhythm.png",
+      "local": "assets/06-metaphor-rhythm.png",
+      "bytes": 1391900,
+      "sha256": "67b90e2a1fdc30d190f7b5d8616b9c08ea1314c682312f37da12adf954a83837"
+    },
+    {
+      "source": "assets/07-process-feedback.png",
+      "local": "assets/07-process-feedback.png",
+      "bytes": 2056676,
+      "sha256": "bd0bef20fb711c5e9d32224289a698fb20a862253f397fd97398015e49fa12a4"
+    },
+    {
+      "source": "assets/08-window-perception.png",
+      "local": "assets/08-window-perception.png",
+      "bytes": 1409943,
+      "sha256": "7067f2eee153534e3ed1c22d4aad739797d2633575ce7ca3756cca462f7e8954"
+    },
+    {
+      "source": "assets/CLAUDE.md",
+      "local": "assets/CLAUDE.md",
+      "bytes": 1022,
+      "sha256": "ce433f84f817c4e8b3c79bc9d3b5970dd37705e106d88fc73ce0f884ba862eef"
+    },
+    {
+      "source": "imagegen/01-mode-overview.md",
+      "local": "imagegen/01-mode-overview.md",
+      "bytes": 5269,
+      "sha256": "0843e931ef3031a3c7992c97e85c2ea5aa3adce5e6f7bdf62979b8d2f801e4a6"
+    },
+    {
+      "source": "imagegen/02-weekly-position.md",
+      "local": "imagegen/02-weekly-position.md",
+      "bytes": 2583,
+      "sha256": "4548ca092193af8c88b48214d6eec94f0644c57fe00be3987959c3e2907e18e5"
+    },
+    {
+      "source": "imagegen/03-sigil-design-sources.md",
+      "local": "imagegen/03-sigil-design-sources.md",
+      "bytes": 10828,
+      "sha256": "56d9ae4514748146395c029212b02835e3e43ce76dfc9ccc924ba657b8e62035"
+    },
+    {
+      "source": "imagegen/04-baseline-rhythm.md",
+      "local": "imagegen/04-baseline-rhythm.md",
+      "bytes": 5309,
+      "sha256": "0722a51af8d428ba5985b58d8feb7c6c8de9b9b91b8160af53135fe9ca42498d"
+    },
+    {
+      "source": "imagegen/05-rarity-selection.md",
+      "local": "imagegen/05-rarity-selection.md",
+      "bytes": 7389,
+      "sha256": "d234d8a9670aa927076f04b67394cace146c46b71a3408056561fdef2c0f44e0"
+    },
+    {
+      "source": "imagegen/06-metaphor-rhythm.md",
+      "local": "imagegen/06-metaphor-rhythm.md",
+      "bytes": 5080,
+      "sha256": "3241ee80fbfa6b1f4d69eb176dbf848181de87652b130b61ccceff87b008b69c"
+    },
+    {
+      "source": "imagegen/07-process-feedback.md",
+      "local": "imagegen/07-process-feedback.md",
+      "bytes": 8110,
+      "sha256": "37c9d9cf14d3c5346d0cd0f7b81fa42a06b51995f8de88c13b8723d44c911e27"
+    },
+    {
+      "source": "imagegen/08-window-perception.md",
+      "local": "imagegen/08-window-perception.md",
+      "bytes": 4609,
+      "sha256": "7ac3efbc158badb3981bdc377e78e99750cbc031d939fa30acc8bbb171256e94"
+    },
+    {
+      "source": "imagegen/CLAUDE.md",
+      "local": "imagegen/CLAUDE.md",
+      "bytes": 797,
+      "sha256": "889d87e4e7698a51aecce7e75bb0aca4e3796d7014d71cbcd5330df82d26d153"
+    },
+    {
+      "source": "imagegen/README.md",
+      "local": "imagegen/README.md",
+      "bytes": 2805,
+      "sha256": "9195645176c0dbccfab56af5c13f08e63f9e4dfeb37c21c2bd8c022d3a4d6bc3"
+    },
+    {
+      "source": "records/CLAUDE.md",
+      "local": "records/CLAUDE.md",
+      "bytes": 796,
+      "sha256": "b85953cb021eeba20813fae93d50115ddf5518507320fd6eff1beefe671996df"
+    },
+    {
+      "source": "records/R03-修正稿.md",
+      "local": "records/R03-修正稿.md",
+      "bytes": 31187,
+      "sha256": "ae669510c6382e3415a7121ba0b358a07f361cfaaaeffbcd6868a10c5bb33436"
+    },
+    {
+      "source": "records/R03-原始ASR.txt",
+      "local": "records/R03-原始ASR.txt",
+      "bytes": 20392,
+      "sha256": "3090d8757f2ae4b84914dce6ed5803a482416290b83f123db564c431773fa5c8"
+    },
+    {
+      "source": "records/R04-修正稿.md",
+      "local": "records/R04-修正稿.md",
+      "bytes": 24591,
+      "sha256": "a4dc6234016e5677a5b629101029bf573a9ad17d996d8337de56834965b51a90"
+    },
+    {
+      "source": "records/R04-原始ASR.txt",
+      "local": "records/R04-原始ASR.txt",
+      "bytes": 5914,
+      "sha256": "15890b2e6e3e1c8e5d4163841bde1c31dc9449082062e18f2195ed707bc73eb0"
+    },
+    {
+      "source": "records/R05-修正稿.md",
+      "local": "records/R05-修正稿.md",
+      "bytes": 24537,
+      "sha256": "55d8d43e422e7725f1359d86732812c5cc92444d593e303904229e27dd9590ff"
+    },
+    {
+      "source": "records/R05-原始ASR.txt",
+      "local": "records/R05-原始ASR.txt",
+      "bytes": 13451,
+      "sha256": "ba337aa7957e63079f5dc453788932c0e8b3c598b599d447fcc5f04e97d19e93"
+    },
+    {
+      "source": "records/R06-修正稿.md",
+      "local": "records/R06-修正稿.md",
+      "bytes": 29920,
+      "sha256": "356a9652884616203498c4f848b01cbd46dc847ece58f096a4faef52b4683a58"
+    },
+    {
+      "source": "records/R06-原始ASR.txt",
+      "local": "records/R06-原始ASR.txt",
+      "bytes": 15808,
+      "sha256": "d1c3ce251921d6a716609af9f9071045eec85a88b63db055f31785ca7a6545e2"
+    },
+    {
+      "source": "records/README.md",
+      "local": "records/README.md",
+      "bytes": 2424,
+      "sha256": "520d1e115942c6afb81b06970ad23f2a43b4443cc9af3a234a675af2702365bc"
+    },
+    {
+      "source": "徽记触发核验.md",
+      "local": "徽记触发核验.md",
+      "bytes": 5654,
+      "sha256": "69a78252a9eaa2ea269b6cb4d00fa394bf7169fd8fb03a2a3b07ac17a06e627e"
+    },
+    {
+      "source": "来源与方法.md",
+      "local": "来源与方法.md",
+      "bytes": 4987,
+      "sha256": "de3929fa4ca939c5093a2da8b2816bbb530d3a7b5cd23dffa5a04b8e51d188a5"
+    },
+    {
+      "source": "系统拆解案.md",
+      "local": "系统拆解案.md",
+      "bytes": 18724,
+      "sha256": "5a58d6010cf35368d41e9c51d5f6db939d0c5dc64a9068dcef9892fbb961ac8a"
+    }
+  ],
+  "articleCoverage": {
+    "sections": 6,
+    "partitionMatchesSource": true,
+    "figures": 8,
+    "originalLines": 185,
+    "sourceSha256": "5a58d6010cf35368d41e9c51d5f6db939d0c5dc64a9068dcef9892fbb961ac8a"
+  }
+}

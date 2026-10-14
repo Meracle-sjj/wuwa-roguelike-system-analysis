@@ -1,0 +1,149 @@
+/*
+ * [INPUT]: boxing-scene.js 的拳手/沙袋结构、feedback-scenes.css 的确认框和共享字号令牌。
+ * [OUTPUT]: 适合与居合并列的高频舞台、同款位置标注及正文级字幕。
+ * [POS]: dist 动作反馈对比栏的拳击主题；消费共享颜色/确认语言，不创建自有循环时钟。
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
+.boxing-scene {
+  min-width:0; margin:0; border:1px solid #d9b77d40; overflow:hidden;
+  background:linear-gradient(140deg,#2620134d,transparent 60%),var(--panel,#121518);
+}
+.boxing-heading {
+  padding:25px 27px 12px;
+}
+.boxing-heading>span {
+  color:var(--gold,#d9b77d); font-size:var(--type-overline,15px); line-height:1.6;
+}
+.boxing-heading h4 {
+  margin:11px 0 8px; font-size:var(--type-stage,24px); line-height:var(--type-heading-line,1.35); font-weight:500;
+}
+.boxing-heading p {
+  color:var(--muted,#a7a39a); font-size:var(--type-body,16px); line-height:var(--type-body-line,1.8); margin:0;
+}
+.boxing-screen {
+  margin:0 12px;
+  background:radial-gradient(ellipse at 53% 55%,#28241c36,transparent 70%);
+}
+.boxing-screen svg {
+  display:block; width:100%; height:auto;
+}
+.boxing-ground,.boxing-ground-grid,.boxing-frame {
+  fill:none; stroke:#81755f; stroke-width:1.2; opacity:.38;
+}
+.boxing-ground-grid {
+  opacity:.18;
+}
+.boxing-frame {
+  stroke:#d9b77d; opacity:.3;
+}
+.boxing-beam {
+  fill:none; stroke:#827963; stroke-width:3; stroke-linecap:round;
+}
+.boxing-shadow {
+  fill:#000; opacity:.35;
+}
+.boxing-limb,.boxing-torso,.boxing-feet {
+  fill:none; stroke:#e8e6df; stroke-width:5.5; stroke-linecap:round; stroke-linejoin:round;
+}
+.boxing-torso {
+  stroke-width:6.5;
+}
+.boxing-limb-far {
+  opacity:.56;
+}
+.boxing-feet {
+  stroke-width:4.8;
+}
+.boxing-head {
+  fill:#151619; stroke:#e8e6df; stroke-width:4.5;
+}
+.boxing-eye {
+  fill:none; stroke:#e8e6df; stroke-width:2.2; stroke-linecap:round;
+}
+.boxing-glove {
+  fill:#242421; stroke:#e8e6df; stroke-width:2;
+}
+.boxing-glove-far {
+  stroke:#b7b6af;
+}
+.boxing-chain,.boxing-chain-link {
+  fill:none; stroke:#999184; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;
+}
+.boxing-chain-link {
+  stroke-width:1.3;
+}
+.boxing-bag-strap {
+  fill:none; stroke:#b5a78a; stroke-width:5;
+}
+.boxing-bag-shell {
+  fill:#222322; stroke:#8d8270; stroke-width:2;
+}
+.boxing-bag-seam {
+  fill:none; stroke:#6f6758; stroke-width:1.2;
+}
+.boxing-bag-side {
+  fill:none; stroke:#c0b393; stroke-width:3; opacity:.15;
+}
+.boxing-bag-target {
+  fill:none; stroke:#d9b77d; stroke-width:1.4; opacity:.2;
+}
+.boxing-contact-light {
+  fill:#e8c886;
+}
+.boxing-contact-arc,.boxing-contact-rays {
+  fill:none; stroke:#e8c886; stroke-width:1.5; stroke-linecap:round;
+}
+.boxing-contact-rays {
+  stroke-width:1.2;
+}
+.boxing-confirm-callout .feedback-confirm-ticks {
+  stroke-opacity:.62;
+}
+.boxing-bag-speed {
+  fill:none; stroke:#bab5a8; stroke-width:1.5; stroke-linecap:round;
+}
+.boxing-svg-phase {
+  fill:#d9b77d; font-size:26px; font-family:var(--sans,system-ui,sans-serif);
+}
+.boxing-svg-rule,.boxing-svg-note {
+  fill:#aba69a; font-size:23px; font-family:var(--sans,system-ui,sans-serif);
+}
+.boxing-svg-note {
+  font-size:21px;
+}
+.boxing-explanation {
+  display:grid; grid-template-columns:1fr; gap:22px;
+  margin:0 27px; padding:24px 0 27px; border-top:1px solid var(--line,#34302a);
+}
+.boxing-phase {
+  color:var(--gold,#d9b77d); font-size:var(--type-body,16px); line-height:1.65;
+}
+.boxing-caption p {
+  margin:9px 0 0; font-size:var(--type-body,16px); line-height:var(--type-body-line,1.8); color:#cfcdc5;
+}
+.boxing-principle {
+  display:flex; align-items:flex-start; gap:15px; padding-top:3px;
+  color:var(--muted,#a7a39a); font-size:var(--type-body,16px); line-height:var(--type-body-line,1.8); margin:0;
+}
+.boxing-principle i {
+  flex:none; width:8px; height:8px; border:1px solid var(--gold,#d9b77d);
+  background:#d9b77d38; border-radius:50%; margin-top:9px;
+}
+.boxing-principle strong {
+  display:block; color:var(--text,#f5f0e7); font-size:var(--type-subtitle,20px); font-weight:500; margin-bottom:7px;
+}
+.boxing-boundary {
+  margin:0; padding:22px 27px 26px; border-top:1px solid #34302a80; background:#00000016;
+  color:#a7a39a; font-size:var(--type-caption,14px); line-height:var(--type-body-line,1.8);
+}
+@media (max-width:620px) {
+  .boxing-heading { padding:24px 20px 12px; }
+  .boxing-explanation { margin:0 20px; padding:22px 0 24px; }
+  .boxing-boundary { padding:20px; }
+  .boxing-svg-phase,.boxing-svg-rule { display:none; }
+  .boxing-svg-note { font-size:36px; }
+  .boxing-confirm-callout .feedback-stage-label { font-size:36px; }
+}
+@media print {
+  .boxing-scene { break-inside:avoid; }
+}

@@ -1,0 +1,53 @@
+# [INPUT]: main 的 dist 静态包、npm 锁定依赖和 tools/verify-page.cjs。
+# [OUTPUT]: 校验通过的 GitHub Pages 制品与固定项目访问链接。
+# [POS]: 发布工作流；验证和部署分离，完整历史用于来源提交的字节核验。
+# [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+name: Publish interactive case study
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  verify-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source and evidence history
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Install locked verification dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Verify offline page and original evidence
+        run: npm run verify
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    runs-on: ubuntu-latest
+    needs: verify-and-package
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

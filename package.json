@@ -1,0 +1,15 @@
+{
+  "name": "wuwa-roguelike-system-analysis",
+  "version": "3.0.0",
+  "private": true,
+  "description": "千道门扉的异想交互系统拆解与离线研究资料",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "verify": "node tools/verify-page.cjs",
+    "build:content": "node tools/build-content.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "29.1.1",
+    "marked": "17.0.5"
+  }
+}

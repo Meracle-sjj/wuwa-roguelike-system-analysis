@@ -1,0 +1,116 @@
+/*
+ * [INPUT]: hierarchy.js的来源节点/单一坚盾/分层容器与theme.css黑金青玉令牌。
+ * [OUTPUT]: 既有能力到徽记的来源架构、基础节奏与移动端保留层级的布局。
+ * [POS]: dist构筑入口专用主题；具体机制定位由CSS提供，SVG连线由组件测量。
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
+.hierarchy-root { margin:35px 0 24px; }
+.hierarchy-thesis { display:flex; align-items:baseline; gap:28px; margin-bottom:29px; }
+.hierarchy-thesis>span { color:var(--gold); font-size:11px; flex-shrink:0; }
+.hierarchy-thesis>p { font-size:22px; line-height:1.65; margin:0; color:var(--muted); }
+.hierarchy-thesis strong { color:var(--text); font-weight:500; }
+.hierarchy-map { border:1px solid #d9b77d45; padding:25px 25px 20px; background:linear-gradient(120deg,#1b1b1660,#0d111780); }
+.hierarchy-column-head { display:grid; grid-template-columns:minmax(180px,.9fr) minmax(230px,1.3fr) 68px minmax(125px,.7fr); column-gap:16px; padding:0 12px; margin-bottom:17px; color:var(--muted); font-size:11px; letter-spacing:.08em; }
+.hierarchy-column-head span:nth-child(2),.hierarchy-column-head span:last-child { text-align:center; }
+.hierarchy-column-head span:last-child { grid-column:4; }
+.hierarchy-board { display:grid; grid-template-columns:minmax(180px,.9fr) minmax(230px,1.3fr) 68px minmax(125px,.7fr); grid-template-rows:repeat(13,40px); row-gap:10px; column-gap:16px; position:relative; padding:12px; isolation:isolate; }
+.hierarchy-frame { grid-column:1/-1; grid-row:var(--row)/var(--end); border:1px solid #d9b77d37; background:#ffffff01; border-radius:6px; margin:-7px -12px; z-index:-1; }
+.hierarchy-frame-mode { border-color:#79c9b65b; background:#79c9b607; }
+.hierarchy-category { grid-column:1; grid-row:var(--row)/var(--end); align-self:center; padding:5px 19px 5px 7px; }
+.hierarchy-category>span { display:block; font-family:var(--serif); font-size:18px; line-height:1; color:var(--gold); margin-bottom:6px; }
+.hierarchy-category h3 { font-size:19px; margin-bottom:5px; }
+.hierarchy-category p { font-size:11px; color:var(--muted); margin:0;line-height:1.5; }
+.hierarchy-category small { display:none; }
+.hierarchy-category-mode>span { color:var(--jade); }
+.hierarchy-source { grid-column:2; grid-row:var(--row); align-self:stretch; display:flex; align-items:center; justify-content:center; background:linear-gradient(95deg,#1d303e,#243849); border:1px solid #a7bfcc52; border-radius:24px; color:#e4ebee; font-size:15px; line-height:1.3; padding:7px 16px; position:relative; }
+.hierarchy-source::before { content:""; width:4px; height:4px; background:#adc4d0; border-radius:50%; position:absolute; left:14px; opacity:.65; }
+.hierarchy-badge { grid-column:4; grid-row:var(--row)/span var(--span); align-self:center; display:flex; align-items:center; justify-content:center; min-height:40px; border-radius:24px; border:1px solid #fff3; position:relative; color:#172020; background:linear-gradient(110deg,#e5c994,#c7a467); box-shadow:inset 0 0 18px #fff1; }
+.hierarchy-badge strong { font-size:16px; line-height:1.3; font-weight:600; letter-spacing:.07em; }
+.hierarchy-badge-jade { background:linear-gradient(110deg,#93cfba,#69a992); }
+.hierarchy-badge-shared { flex-direction:column; min-height:59px; border-radius:27px; box-shadow:0 0 23px #79c9b615; }
+.hierarchy-badge-shared small { display:block; margin-top:3px; font-size:9px; line-height:1.3; opacity:.8; }
+.hierarchy-wires { width:100%; height:100%; position:absolute; inset:0; pointer-events:none; z-index:0; overflow:visible; }
+.hierarchy-paths path { stroke:#d9b77db3; fill:none; stroke-width:1.2; }
+.hierarchy-wires marker path { fill:#d9b77d; stroke:none; }
+.hierarchy-paths .hierarchy-shared-wire { stroke:#e9d6b3; stroke-width:1.7; }
+.hierarchy-color-key { display:flex; gap:35px; justify-content:center; flex-wrap:wrap; margin:25px 0 10px; }
+.hierarchy-color-key>span { display:flex; align-items:center; gap:8px; font-size:12px; }
+.hierarchy-color-key i,.hierarchy-baseline-title i { width:14px; height:8px; border-radius:4px; background:var(--gold); flex-shrink:0; }
+.hierarchy-color-key .hierarchy-key-jade { background:var(--jade); }
+.hierarchy-color-key b { font-family:var(--serif); color:var(--muted); font-size:14px; font-weight:400; margin-left:2px; }
+.hierarchy-scope { text-align:center; color:var(--muted); font-size:10px; margin:0; }
+.hierarchy-shield-explanation { display:grid; grid-template-columns:190px 1fr; gap:30px; margin:22px 0 46px; align-items:start; border-left:2px solid var(--jade); padding:5px 0 5px 20px; }
+.hierarchy-shield-explanation>span { font-size:14px; color:var(--jade); }
+.hierarchy-shield-explanation p { font-size:13px; color:var(--muted); line-height:1.9; margin:0; }
+.hierarchy-shield-explanation b { font-weight:500; color:var(--text); }
+.hierarchy-shield-explanation i { font-style:normal; padding:0 8px; color:var(--jade); }
+.hierarchy-dream-header { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; border-bottom:1px solid var(--line); padding-bottom:17px; margin-bottom:20px; }
+.hierarchy-dream-header span { color:var(--gold); font-size:10px; display:block; margin-bottom:10px; }
+.hierarchy-dream-header h3 { font-size:22px; margin:0; }
+.hierarchy-dream-header>p { font-size:12px; color:var(--muted); margin:0; white-space:nowrap; }
+.hierarchy-dream-header i { font-style:normal; color:var(--gold); margin:0 7px; }
+.hierarchy-baselines { display:grid; grid-template-columns:1fr 1fr; gap:25px; }
+.hierarchy-baseline { border:1px solid var(--line); padding:22px 20px 16px; background:#ffffff02; }
+.hierarchy-baseline-title { display:flex; gap:10px; align-items:center; }
+.hierarchy-baseline-title h4 { margin:0; font-size:14px; font-weight:500; }
+.hierarchy-baseline-jade .hierarchy-baseline-title i { background:var(--jade); }
+.hierarchy-baseline svg { width:100%; display:block; margin:16px 0 7px; overflow:visible; }
+.hierarchy-dream-zone { fill:#d9b77d0e; stroke:#d9b77d25; }
+.hierarchy-baseline-axis { fill:none; stroke:#666155; stroke-width:1; }
+.hierarchy-baseline-line { stroke:var(--gold); stroke-width:2; fill:none; }
+.hierarchy-baseline-jade .hierarchy-baseline-line { stroke:var(--jade); }
+.hierarchy-baseline text { fill:var(--muted); font-size:11px; font-family:var(--sans); }
+.hierarchy-baseline p { font-size:12px; color:var(--muted); line-height:1.85; margin:0; }
+.hierarchy-baseline-scope { color:var(--muted); font-size:11px; line-height:1.9; margin:16px 0 29px; }
+.hierarchy-arguments { display:grid; grid-template-columns:1fr 1fr 1fr; gap:30px; border-top:1px solid var(--line); padding-top:25px; }
+.hierarchy-arguments>div>span { display:block; color:var(--gold); font-size:13px; margin-bottom:12px; }
+.hierarchy-arguments p { font-size:12px; color:var(--muted); line-height:1.9; margin:0; }
+@media (max-width:1050px) {
+  .hierarchy-map { padding:21px 18px 18px; }
+  .hierarchy-column-head { grid-template-columns:minmax(150px,.8fr) minmax(185px,1.15fr) 40px minmax(110px,.6fr); column-gap:12px; }
+  .hierarchy-board { grid-template-columns:minmax(150px,.8fr) minmax(185px,1.15fr) 40px minmax(110px,.6fr); column-gap:12px; }
+  .hierarchy-category h3 { font-size:18px; }
+  .hierarchy-source { font-size:14px; }
+}
+@media (max-width:760px) {
+  .hierarchy-thesis { display:block; margin-bottom:23px; }
+  .hierarchy-thesis>span { display:block; margin-bottom:10px; }
+  .hierarchy-thesis>p { font-size:19px; }
+  .hierarchy-map { padding:15px 15px 17px; }
+  .hierarchy-column-head { grid-template-columns:minmax(0,1.15fr) 43px minmax(0,.75fr); gap:0; font-size:10px; padding:0; }
+  .hierarchy-column-head span:first-child { grid-column:1; }
+  .hierarchy-column-head span:nth-child(2) { display:none; }
+  .hierarchy-column-head span:last-child { grid-column:3; }
+  .hierarchy-board { grid-template-columns:minmax(0,1.15fr) 43px minmax(0,.75fr); grid-template-rows:repeat(17,45px); column-gap:0; row-gap:10px; padding:9px 0; }
+  .hierarchy-frame { grid-row:var(--mobile-row)/var(--mobile-end); margin:-4px -8px; }
+  .hierarchy-category { grid-column:1; grid-row:var(--mobile-row); padding:0 7px; align-self:center; display:grid; grid-template-columns:22px 1fr; column-gap:7px; }
+  .hierarchy-category>span { font-size:14px; line-height:1.2; margin:0; grid-row:1/3; }
+  .hierarchy-category h3 { font-size:14px; line-height:1.2; margin:0; }
+  .hierarchy-category p { font-size:8px; line-height:1.2; margin:4px 0 0; }
+  .hierarchy-category small { display:none; }
+  .hierarchy-source { grid-column:1; grid-row:var(--mobile-row); font-size:12px; padding:5px 7px; line-height:1.4; border-radius:21px; text-align:center; }
+  .hierarchy-source::before { display:none; }
+  .hierarchy-badge { grid-column:3; grid-row:var(--mobile-row)/span var(--mobile-span); min-height:43px; }
+  .hierarchy-badge strong { font-size:14px; }
+  .hierarchy-badge-shared { min-height:57px; }
+  .hierarchy-badge-shared small { font-size:8px; }
+  .hierarchy-color-key { justify-content:flex-start; gap:10px; margin:21px 0 13px; }
+  .hierarchy-color-key>span { font-size:10px; }
+  .hierarchy-color-key i { width:12px; height:7px; }
+  .hierarchy-scope { text-align:left; font-size:9px; line-height:1.8; }
+  .hierarchy-shield-explanation { display:block; margin:21px 0 35px; padding-left:15px; }
+  .hierarchy-shield-explanation>span { display:block; margin-bottom:9px; }
+  .hierarchy-shield-explanation p { font-size:12px; }
+  .hierarchy-dream-header { display:block; }
+  .hierarchy-dream-header h3 { font-size:19px; }
+  .hierarchy-dream-header>p { margin-top:12px; }
+  .hierarchy-baselines { grid-template-columns:1fr; gap:12px; }
+  .hierarchy-baseline { padding:19px 16px 15px; }
+  .hierarchy-baseline-title h4 { font-size:13px; }
+  .hierarchy-baseline text { font-size:18px; }
+  .hierarchy-arguments { grid-template-columns:1fr; gap:22px; }
+}
+@media print {
+  .hierarchy-wires { print-color-adjust:exact; }
+  .hierarchy-map,.hierarchy-badge,.hierarchy-source { print-color-adjust:exact; }
+}

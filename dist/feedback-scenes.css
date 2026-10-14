@@ -1,0 +1,229 @@
+/*
+ * [INPUT]: feedback-scenes.js 的 SVG 姿态，以及入口的动作对照栏和独立状态栏。
+ * [OUTPUT]: 居合/拳击同栏布局、共用确认标注语言与状态舞台的窄屏阅读样式。
+ * [POS]: dist 的反馈布局与基础舞台样式；拳击复用确认标注，所有动态进程由 CaseMotion 驱动。
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
+.feedback-comparison,.feedback-state-group { margin:42px 0 30px; }
+.feedback-group-heading { margin:0 0 22px; }
+.feedback-group-heading h3 {
+  margin:0 0 9px; font-size:var(--type-stage); line-height:1.4; font-weight:600;
+}
+.feedback-group-heading p {
+  margin:0; color:var(--muted); font-size:var(--type-body); line-height:var(--type-body-line);
+}
+.feedback-action-pair {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  border:1px solid #d9b77d40; background:var(--panel);
+}
+.feedback-action-pair>div { min-width:0; }
+.feedback-action-pair>div+div { border-left:1px solid #d9b77d40; }
+.feedback-action-pair .feedback-scene,.feedback-action-pair .boxing-scene {
+  display:flex; flex-direction:column; height:100%; border:0; margin:0;
+}
+.feedback-action-pair .feedback-scene-boundary,.feedback-action-pair .boxing-boundary { margin-top:auto; }
+.feedback-action-pair .feedback-scene-heading,.feedback-action-pair .boxing-heading {
+  min-height:172px; box-sizing:border-box;
+}
+.feedback-rule-copy { padding:24px 0; }
+.feedback-rule-copy h4 {
+  margin:0 0 9px; color:var(--gold); font-size:var(--type-subtitle); line-height:1.5; font-weight:500;
+}
+.feedback-rule-copy p {
+  margin:0; color:var(--muted); font-size:var(--type-body); line-height:var(--type-body-line);
+}
+.feedback-state-layout {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px; align-items:center;
+}
+.feedback-state-layout>div { min-width:0; }
+.feedback-state-layout .feedback-rule-copy h4 { color:var(--jade); }
+.feedback-state-layout .feedback-rule-copy { padding:28px 0; }
+.feedback-scene {
+  min-width:0; border:1px solid #d9b77d40;
+  background:linear-gradient(150deg,#241d125c,transparent 48%),var(--panel,#121518);
+  overflow:hidden;
+}
+.feedback-scene-state {
+  border-color:#79c9b634;
+  background:linear-gradient(150deg,#18262252,transparent 48%),var(--panel,#121518);
+}
+.feedback-scene-heading {
+  padding:25px 27px 12px;
+}
+.feedback-scene-heading>span {
+  font-size:10px; letter-spacing:.08em; color:var(--gold,#d9b77d);
+}
+.feedback-scene-state .feedback-scene-heading>span {
+  color:var(--jade,#79c9b6);
+}
+.feedback-scene-heading h4 {
+  font-size:25px; font-weight:500; line-height:1.4; margin:11px 0 8px;
+}
+.feedback-scene-heading p {
+  color:var(--muted,#a7a39a); font-size:12px; line-height:1.8; margin:0;
+}
+.feedback-scene-screen {
+  position:relative; background:radial-gradient(ellipse at 50% 56%,#2820192f,transparent 72%);
+  margin:0 12px;
+}
+.feedback-scene-screen svg {
+  display:block; width:100%; height:auto; overflow:visible;
+}
+.feedback-ground {
+  fill:none; stroke:#81755f; stroke-width:1.2; opacity:.45;
+}
+.feedback-ground-grid {
+  fill:none; stroke:#9b907522; stroke-width:1;
+}
+.feedback-stage-corners {
+  fill:none; stroke:#d9b77d46; stroke-width:1.2;
+}
+.feedback-stage-kicker {
+  fill:#a7a39a; font-size:15px; letter-spacing:.08em;
+  font-family:var(--sans,system-ui,sans-serif);
+}
+.feedback-stick-shadow {
+  fill:#000; opacity:.37;
+}
+.feedback-stick-limb,.feedback-stick-body,.feedback-stick-feet {
+  fill:none; stroke:currentColor; stroke-width:6; stroke-linecap:round; stroke-linejoin:round;
+}
+.feedback-stick-body {
+  stroke-width:7;
+}
+.feedback-stick-far {
+  opacity:.56;
+}
+.feedback-stick-feet {
+  stroke-width:5;
+}
+.feedback-stick-head {
+  fill:#151619; stroke:currentColor; stroke-width:4.5;
+}
+.feedback-stick-eye {
+  fill:none; stroke:currentColor; stroke-width:2.5; stroke-linecap:round;
+}
+.feedback-sword-grip {
+  fill:none; stroke:#d9b77d; stroke-width:4; stroke-linecap:round;
+}
+.feedback-sword-blade {
+  fill:none; stroke:#f3f1e9; stroke-width:4.5; stroke-linecap:round;
+}
+.feedback-sword-edge {
+  fill:none; stroke:#d9b77d; stroke-width:1;
+}
+.feedback-sheath {
+  fill:none; stroke:#8b816f; stroke-width:6; stroke-linecap:round;
+}
+.feedback-confirm-ring,.feedback-confirm-ticks {
+  fill:none; stroke:#e8c98e; stroke-width:2.5;
+}
+.feedback-confirm-ring-outer {
+  stroke-width:1;
+}
+.feedback-confirm-ticks {
+  stroke-width:1.5;
+}
+.feedback-stage-label {
+  fill:#e7c488; font-size:17px; font-family:var(--sans,system-ui,sans-serif);
+  font-weight:500; letter-spacing:.05em;
+}
+.feedback-slash-main {
+  fill:none; stroke:#ead1a0; stroke-width:4.5; stroke-linecap:round;
+}
+.feedback-slash-side {
+  fill:none; stroke:#ead1a0; stroke-width:1.5; stroke-linecap:round; opacity:.4;
+}
+.feedback-dash {
+  fill:none; stroke:#d9b77d; stroke-width:2.2; stroke-linecap:round; stroke-dasharray:42 14;
+}
+.feedback-buff-ring {
+  fill:none; stroke:#d9b77d; stroke-width:2.5;
+}
+.feedback-buff-jade {
+  stroke:#79c9b6; stroke-width:3;
+}
+.feedback-buff-spark {
+  fill:#cbe3cd;
+}
+.feedback-curse-mark,.feedback-curse-crown {
+  fill:none; stroke:#cb8dae; stroke-width:3; stroke-linecap:round; stroke-linejoin:round;
+}
+.feedback-curse-ring {
+  fill:none; stroke:#c37b9b; stroke-width:2; stroke-dasharray:23 11;
+}
+.feedback-state-link {
+  fill:none; stroke:#a89972; stroke-width:1.3; stroke-dasharray:5 9;
+}
+.feedback-state-dot {
+  fill:#e5ca8f;
+}
+.feedback-label-jade {
+  fill:#a4d5bf;
+}
+.feedback-label-curse {
+  fill:#d9a0bc;
+}
+.feedback-actor-name {
+  fill:#aaa79e; font-size:14px; font-family:var(--sans,system-ui,sans-serif); letter-spacing:.14em;
+}
+.feedback-scene-caption {
+  margin:0 27px; border-top:1px solid var(--line,#34302a); padding:19px 0 0;
+  min-height:112px;
+}
+.feedback-scene-phase {
+  color:var(--gold,#d9b77d); font-size:11px; letter-spacing:.04em;
+}
+.feedback-scene-state .feedback-scene-phase {
+  color:var(--jade,#79c9b6);
+}
+.feedback-scene-caption p {
+  color:#cfcdc5; font-size:13px; line-height:1.8; margin:7px 0 15px;
+}
+.feedback-scene-steps {
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px;
+  list-style:none; padding:0; margin:0 27px 20px;
+}
+.feedback-scene-steps li {
+  border-top:2px solid #3c3730; padding-top:8px; font-size:10px;
+  color:#827f76; line-height:1.6;
+}
+.feedback-scene-steps li.is-past {
+  border-color:#8b774f; color:#b2a688;
+}
+.feedback-scene-steps li.is-current {
+  border-color:var(--gold,#d9b77d); color:var(--gold,#d9b77d);
+}
+.feedback-scene-state .feedback-scene-steps li.is-past {
+  border-color:#4c7a6e; color:#8eaca0;
+}
+.feedback-scene-state .feedback-scene-steps li.is-current {
+  border-color:var(--jade,#79c9b6); color:var(--jade,#79c9b6);
+}
+.feedback-scene-boundary {
+  margin:0; padding:18px 27px 23px; border-top:1px solid #34302a80;
+  background:#00000016; color:#9c9990; font-size:11px; line-height:1.85;
+}
+@media (max-width:900px) {
+  .feedback-action-pair,.feedback-state-layout { grid-template-columns:1fr; }
+  .feedback-action-pair>div+div { border-left:0; border-top:1px solid #d9b77d40; }
+  .feedback-action-pair .feedback-scene-heading,.feedback-action-pair .boxing-heading { min-height:0; }
+  .feedback-state-layout { gap:0; }
+  .feedback-scene-heading { padding:24px 25px 6px; }
+  .feedback-scene-screen { max-width:700px; margin:0 auto; }
+  .feedback-scene-caption { min-height:96px; }
+}
+@media (max-width:520px) {
+  .feedback-comparison,.feedback-state-group { margin-top:30px; }
+  .feedback-group-heading { margin-bottom:18px; }
+  .feedback-scene-heading { padding:22px 18px 6px; }
+  .feedback-scene-heading h4 { font-size:23px; }
+  .feedback-scene-caption { margin:0 18px; min-height:124px; padding-top:17px; }
+  .feedback-scene-caption p { font-size:12px; }
+  .feedback-scene-steps { margin:0 18px 18px; gap:6px; }
+  .feedback-scene-boundary { padding:16px 18px 19px; }
+}
+@media print {
+  .feedback-action-pair,.feedback-state-layout { display:block; }
+  .feedback-scene { break-inside:avoid; margin-bottom:20px; }
+}

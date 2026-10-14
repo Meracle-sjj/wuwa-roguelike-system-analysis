@@ -1,0 +1,112 @@
+{
+  "revision": "HTML v3 shared action comparison and consistent confirmation callouts",
+  "generatedAt": "2026-10-14T04:36:10.387Z",
+  "sourceCommit": "fb160b19e5d5e19b306c9e3e8ea1f67ffd3458f2",
+  "passed": true,
+  "checks": [
+    {
+      "name": "离线file URL成功初始化，无脚本异常",
+      "passed": true
+    },
+    {
+      "name": "六章、八原图、四局全文与证据附件已装配",
+      "passed": true
+    },
+    {
+      "name": "完整原稿导言与六章的可见文字没有删节",
+      "passed": true
+    },
+    {
+      "name": "全部本地链接、图片、脚本、样式与页内锚点存在",
+      "passed": true
+    },
+    {
+      "name": "02保留四组13来源到12徽记，坚盾是单节点双来源",
+      "passed": true
+    },
+    {
+      "name": "可见即自动播放，页面不提供启动/拖动门槛",
+      "passed": true
+    },
+    {
+      "name": "不可见舞台暂停，可见后继续",
+      "passed": true
+    },
+    {
+      "name": "统一暂停/继续同步所有舞台",
+      "passed": true
+    },
+    {
+      "name": "03推荐优先、品质/位置辅助与旧卡下沉",
+      "passed": true
+    },
+    {
+      "name": "04切换案例重回准备并保持自动循环策略",
+      "passed": true
+    },
+    {
+      "name": "条件依赖曲线在状态外精确回到基线",
+      "passed": true
+    },
+    {
+      "name": "05两组姿态/特效分段变化，不冒充实机规则",
+      "passed": true
+    },
+    {
+      "name": "居合与拳击同栏对照，状态另成一栏且标题层级一致",
+      "passed": true
+    },
+    {
+      "name": "新增拳击普通接触有微量确认，蓄力重击没有同类提示",
+      "passed": true
+    },
+    {
+      "name": "普通攻击采用同款方框引线，蓄力时撤去且无普通拳用词",
+      "passed": true
+    },
+    {
+      "name": "低动态代表接触帧仍可辨，重拳无普通确认",
+      "passed": true
+    },
+    {
+      "name": "删除自明播放标签，保留中性策略与有效性说明",
+      "passed": true
+    },
+    {
+      "name": "卡面字体本地可分发且字阶由独立角色层管理",
+      "passed": true
+    },
+    {
+      "name": "主文与金色文字的基础色对比达到普通文字阈值",
+      "passed": true
+    },
+    {
+      "name": "03与04自动跨过完整周期后继续播放",
+      "passed": true
+    },
+    {
+      "name": "原图与记录对话框装配完整且关闭返回控件",
+      "passed": true
+    },
+    {
+      "name": "正文全部展开/收起及深链定位",
+      "passed": true
+    },
+    {
+      "name": "34份来源原件与八图保持固定提交SHA-256",
+      "passed": true
+    },
+    {
+      "name": "可维护源码不超过800行并具备文件契约",
+      "passed": true
+    },
+    {
+      "name": "反馈销毁不清除拳击兄弟，全部销毁后时钟无残留",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "jsdom不做排版、SVG视觉或键盘原生行为判断；这些另经真实浏览器检查。",
+    "曲线是定性规则解释，反馈是概念提案，均不代表游戏实测或实装。"
+  ]
+}

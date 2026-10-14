@@ -1,0 +1,252 @@
+/*
+ * [INPUT]: 原文、八图、记录对话框与页面结尾的DOM。
+ * [OUTPUT]: 完整资料阅读、表格、原图查看与对话框样式。
+ * [POS]: dist来源阅读层；不改变原稿内容，窄屏阅读规则位于responsive.css。
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
+.archive-section {
+  border-bottom:0; padding-bottom:68px;
+}
+.archive-heading {
+  display:flex; justify-content:space-between; gap:30px;
+  align-items:end; margin-bottom:35px;
+}
+.archive-heading .eyebrow {
+  margin-bottom:13px;
+}
+.archive-heading h2 {
+  font-size:30px; margin-bottom:13px;
+}
+.archive-heading p:last-child {
+  font-size:12px; color:var(--muted); margin:0;
+}
+.archive-heading>.button {
+  white-space:nowrap; font-size:11px; min-height:38px;
+  padding:8px 15px;
+}
+.reading-details {
+  border-top:1px solid var(--line);
+}
+.reading-details:last-child {
+  border-bottom:1px solid var(--line);
+}
+.reading-details summary {
+  display:grid; grid-template-columns:60px 1fr 70px; gap:20px;
+  align-items:center; padding:22px 6px; list-style:none;
+  cursor:pointer;
+}
+.reading-details summary::-webkit-details-marker {
+  display:none;
+}
+.reading-details summary>span:first-child {
+  color:var(--gold); font-size:11px;
+}
+.reading-details summary strong {
+  font-size:14px; font-weight:500;
+}
+.summary-action {
+  font-size:10px; color:var(--muted); text-align:right;
+}
+.reading-details[open] .summary-action {
+  font-size:0;
+}
+.reading-details[open] .summary-action::after {
+  content:"收起 −"; font-size:10px;
+}
+.reading-details[open] summary {
+  color:var(--gold);
+}
+.prose {
+  max-width:880px; margin:0 auto; padding:26px 0 40px;
+  font-size:14px; line-height:2.05; color:#c9c6be;
+  overflow-wrap:anywhere;
+}
+.prose h1 {
+  font-size:27px; color:var(--text);
+}
+.prose h2 {
+  font-size:25px; color:var(--text); margin:1.7em 0 .9em;
+  line-height:1.45;
+}
+.prose h2:first-child {
+  margin-top:0;
+}
+.prose h3 {
+  color:var(--text); font-size:19px; margin:1.8em 0 .9em;
+  line-height:1.5;
+}
+.prose h4 {
+  color:var(--gold); font-size:15px;
+}
+.prose p {
+  margin:0 0 1.2em;
+}
+.prose strong {
+  font-weight:600; color:#e9e4da;
+}
+.prose a {
+  color:var(--gold); border-bottom:1px solid #d9b77d50;
+}
+.prose img {
+  width:100%; margin:24px 0 13px; border:1px solid var(--line);
+  cursor:zoom-in;
+}
+.prose em {
+  font-size:12px; color:var(--muted);
+}
+.prose ul,.prose ol {
+  padding-left:1.7em; margin:1.2em 0;
+}
+.prose li {
+  margin:.5em 0;
+}
+.prose table {
+  border-collapse:collapse; width:100%; font-size:12px;
+  line-height:1.85; display:block; overflow-x:auto;
+  margin:22px 0;
+}
+.prose th,.prose td {
+  border:1px solid var(--line); padding:11px 13px; min-width:100px;
+  text-align:left; vertical-align:top;
+}
+.prose th {
+  background:var(--panel); color:var(--gold); font-weight:500;
+}
+.prose td {
+  color:var(--muted);
+}
+.prose blockquote {
+  font-size:14px; color:var(--muted); border-left:2px solid var(--gold);
+  padding:8px 20px; margin:20px 0;
+}
+.prose code {
+  font:12px ui-monospace,SFMono-Regular,monospace; color:var(--gold); background:#d9b77d09;
+  padding:2px 4px;
+}
+.prose pre {
+  padding:15px; background:var(--panel); border:1px solid var(--line);
+  overflow-x:auto; line-height:1.6;
+}
+.prose pre code {
+  padding:0; background:transparent;
+}
+.prose hr {
+  border:0; border-top:1px solid var(--line); margin:30px 0;
+}
+.source-link-disabled {
+  color:var(--muted);
+}
+.gallery-heading {
+  margin-top:60px; display:flex; justify-content:space-between;
+  gap:20px; align-items:baseline;
+}
+.gallery-heading h3 {
+  font-size:22px; margin:0 0 20px;
+}
+.gallery-heading p {
+  font-size:11px; color:var(--muted);
+}
+.figure-gallery {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
+}
+.gallery-item {
+  text-align:left; padding:0; min-width:0;
+}
+.gallery-item .thumb {
+  aspect-ratio:1.5; overflow:hidden; background:#121212;
+  border:1px solid var(--line);
+}
+.gallery-item img {
+  width:100%; height:100%; object-fit:contain;
+  transition:transform .25s;
+}
+.gallery-item:hover img {
+  transform:scale(1.03);
+}
+.gallery-item p {
+  font-size:11px; line-height:1.7; margin:10px 0 0;
+  display:flex; gap:10px; align-items:baseline;
+}
+.gallery-item p span:first-child {
+  font-family:var(--serif); color:var(--gold); font-size:14px;
+}
+.source-foot {
+  display:flex; gap:24px; align-items:center;
+  border-top:1px solid var(--line); margin-top:36px; padding-top:22px;
+}
+.source-foot p {
+  font-size:10px; line-height:1.9; color:var(--muted);
+  margin:0; max-width:65%; margin-right:auto;
+}
+.source-foot a {
+  white-space:nowrap; color:var(--gold); font-size:10px;
+}
+.site-footer {
+  border-top:1px solid var(--line); max-width:var(--max); margin:auto;
+  padding:32px 0 45px; display:flex; align-items:center;
+  justify-content:space-between; gap:25px;
+}
+.site-footer .brand {
+  font-size:12px;
+}
+.site-footer>span {
+  font-size:10px; color:var(--muted);
+}
+.site-footer .brand-mark {
+  height:28px; width:28px; font-size:17px;
+}
+.site-footer .text-link {
+  font-size:11px;
+}
+dialog {
+  color:var(--text); background:#0d1013; border:1px solid #756344;
+  padding:28px; max-height:92vh; width:calc(100% - 40px);
+  max-width:1150px; box-shadow:0 20px 80px #0009;
+}
+dialog::backdrop {
+  background:#000d; backdrop-filter:blur(5px);
+}
+.dialog-top {
+  display:flex; justify-content:space-between; align-items:flex-start;
+  gap:25px; margin-bottom:23px;
+}
+.dialog-top .eyebrow {
+  margin:0 0 9px; font-size:9px;
+}
+.dialog-top h2 {
+  font-size:21px; margin:0; line-height:1.5;
+}
+.dialog-close {
+  font-size:26px; width:35px; height:35px;
+  line-height:1; border:1px solid var(--line); flex-shrink:0;
+}
+.dialog-close:hover {
+  border-color:var(--gold);
+}
+.figure-dialog>img {
+  width:100%; height:auto; background:#090c0f;
+}
+.figure-dialog>p {
+  font-size:12px; color:var(--muted); margin:18px 0 12px;
+  line-height:1.9;
+}
+.figure-dialog>a {
+  color:var(--gold); font-size:11px;
+}
+.document-dialog {
+  max-width:990px;
+}
+.document-dialog .prose {
+  padding:15px 0 20px;
+}
+.document-dialog .source-document-link {
+  font-size:11px; color:var(--gold); border-bottom:1px solid var(--line);
+  padding-bottom:15px; display:block; margin-bottom:25px;
+}
+.noscript-note {
+  padding:30px; max-width:var(--max); margin:auto;
+  color:var(--muted);
+}
+.noscript-note a {
+  color:var(--gold);
+}
